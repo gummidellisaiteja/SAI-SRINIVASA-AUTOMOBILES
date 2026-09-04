@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Srinivasa Automobiles | Two Wheeler Repair, Four Wheeler Spare Parts & Tractor Works | Madhira</title>
+    <meta name="description" content="Sai Srinivasa Automobiles in Nemali X Road, Madhira. Trusted two wheeler repairing, genuine four wheeler spare parts, and complete tractor works. Owned by RamBabu. Contact 8790460012 / 9949515518.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- TOP INFORMATION BAR -->
+    <div class="top-bar">
+        <div class="container top-bar-container">
+            <!-- Clickable Top Location Area -->
+            <a href="https://www.google.com/maps/search/?api=1&query=SAI+SRINIVASA+AUTOMOBILES,+Madhira+-+Wyra+Road,+Near+Mallavaram,+Siripuram,+Madhira" 
+               target="_blank" rel="noopener noreferrer" 
+               class="top-info-left top-location-link" 
+               title="Open shop location in Google Maps"
+               data-i18n-title="topLocationTooltip">
+                <i class="fa-solid fa-location-dot location-pulse"></i>
+                <span data-i18n="topAddress">Wyra Road, Siripuram, Near Mallavaram Stage, Nemali X Road, Madhira</span>
+                <i class="fa-solid fa-up-right-from-square mini-map-icon"></i>
+            </a>
+
+            <div class="top-info-center">
+                <i class="fa-regular fa-clock"></i>
+                <span data-i18n="topHours">7:30 AM – 8:30 PM</span>
+            </div>
+
+            <!-- BOTH PHONE NUMBERS CLICKABLE -->
+            <div class="top-info-right">
+                <div class="phone-group">
+                    <a href="tel:8790460012" class="top-phone-link" title="Call 8790460012"><i class="fa-solid fa-phone"></i> 📞 8790460012</a>
+                    <span class="divider">|</span>
+                    <a href="tel:9949515518" class="top-phone-link" title="Call 9949515518"><i class="fa-solid fa-phone"></i> 📞 9949515518</a>
+                </div>
+
+                <div class="lang-switch">
+                    <button id="lang-en" class="lang-btn active" onclick="switchLanguage('en')">English</button>
+                    <span class="lang-divider">|</span>
+                    <button id="lang-te" class="lang-btn" onclick="switchLanguage('te')">తెలుగు</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER & NAVIGATION -->
+    <header class="main-header" id="header">
+        <div class="container nav-container">
+            <a href="#home" class="logo-link">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-gear gear-spin"></i>
+                    <i class="fa-solid fa-wrench wrench-icon"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">SAI SRINIVASA</span>
+                    <span class="logo-subtitle" data-i18n="logoSub">AUTOMOBILES</span>
+                </div>
+            </a>
+
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="#home" class="nav-link active" data-i18n="navHome">Home</a></li>
+                    <li><a href="#about" class="nav-link" data-i18n="navAbout">About</a></li>
+                    <li><a href="#team" class="nav-link" data-i18n="navTeam">Meet Our Team</a></li>
+                    <li><a href="#services" class="nav-link" data-i18n="navServices">Services</a></li>
+                    <li><a href="#catalog" class="nav-link" data-i18n="navSpareParts">Spare Parts</a></li>
+                    <li><a href="#request-part" class="nav-link" data-i18n="navRequestPart">Request Part</a></li>
+                    <li><a href="#contact" class="nav-link" data-i18n="navContact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- HEADER PROFILE AVATARS & CALL CTA -->
+            <div class="header-actions">
+                <div class="header-team-avatars">
+                    <a href="#team" class="header-avatar-item" title="RamBabu — Proprietor" data-i18n-title="tooltipRamBabu">
+                        <img src="rambabu.jpg" alt="RamBabu" class="avatar-img avatar-border-red" onerror="this.onerror=null; this.src='rambabu2.jpg';">
+                        <span class="avatar-label" data-i18n="headerRamBabuLabel">RamBabu</span>
+                    </a>
+                    <a href="#team" class="header-avatar-item" title="Veerababu — Mechanic" data-i18n-title="tooltipVeerababu">
+                        <img src="veerababu.jpg" alt="Veerababu" class="avatar-img avatar-border-green" onerror="this.onerror=null; this.src='veerababu.jpg';">
+                        <span class="avatar-label" data-i18n="headerVeerababuLabel">Veerababu</span>
+                    </a>
+                </div>
+
+                <a href="tel:8790460012" class="btn btn-call-now" title="Call Shop: 8790460012">
+                    <i class="fa-solid fa-phone"></i> <span data-i18n="callNow">Call Now</span>
+                </a>
+                
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="home">
+        <div class="hero-backdrop-overlay"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-i18n="heroTitle">
+                    Your Trusted <span class="text-red">Automobile Service &amp;</span> <br>
+                    <span class="text-red">Spare Parts Partner</span>
+                </h1>
+                <p class="hero-subtitle" data-i18n="heroSubtitle">
+                    Two Wheeler Repairing • Four Wheeler Spare Parts • Complete Tractor Works
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#catalog" class="btn btn-red">
+                        <i class="fa-solid fa-magnifying-glass"></i> <span data-i18n="btnExploreParts">Explore Spare Parts</span>
+                    </a>
+                    <a href="#request-part" class="btn btn-dark-outline">
+                        <i class="fa-regular fa-calendar-check"></i> <span data-i18n="btnRequestService">Request a Service</span>
+                    </a>
+                    <a href="tel:8790460012" class="btn btn-dark-outline">
+                        <i class="fa-solid fa-phone"></i> <span data-i18n="callNow">Call 8790460012</span>
+                    </a>
+                   <!-- <a href="tel:9949515518" class="btn btn-dark-outline">
+                        <i class="fa-solid fa-phone"></i> <span >Call 9949515518</span>
+                    </a> -->
+                </div>
+
+                <!-- Clickable Hero Location Pill -->
+                <div class="hero-info-pills">
+                    <a href="https://www.google.com/maps/search/?api=1&query=SAI+SRINIVASA+AUTOMOBILES,+Madhira+-+Wyra+Road,+Near+Mallavaram,+Siripuram,+Madhira" 
+                       target="_blank" rel="noopener noreferrer" 
+                       class="info-pill hero-location-link"
+                       title="Open shop location in Google Maps"
+                       data-i18n-title="topLocationTooltip">
+                        <i class="fa-solid fa-location-dot text-red"></i>
+                        <span data-i18n="heroLocation">Nemali X Road, Madhira</span>
+                        <i class="fa-solid fa-up-right-from-square pill-map-icon"></i>
+                    </a>
+
+                    <div class="info-pill">
+                        <i class="fa-solid fa-circle-check text-green"></i>
+                        <span data-i18n="heroHoursPill">Open Today • 7:30 AM – 8:30 PM</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="workshop-badge">
+                    <span class="badge-title" data-i18n="allPartsAvailable">All Spare Parts Available</span>
+                    <span class="badge-sub" data-i18n="forAllVehicles">For Two Wheeler, Four Wheeler &amp; Tractors</span>
+                </div>
+                <div class="vehicle-composition">
+                    <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=600&q=80" alt="Motorcycle" class="vehicle-img bike-img" onerror="this.onerror=null; this.src=getVehicleSVG('bike');">
+                    <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" alt="Four Wheeler Car" class="vehicle-img car-img" onerror="this.onerror=null; this.src=getVehicleSVG('car');">
+                    <img src="https://images.unsplash.com/photo-1530267981375-f0de937f5f13?auto=format&fit=crop&w=700&q=80" alt="Tractor" class="vehicle-img tractor-img" onerror="this.onerror=null; this.src=getVehicleSVG('tractor');">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VEHICLE CATEGORY CARDS (3 CARDS) -->
+    <section class="category-cards-section">
+        <div class="container">
+            <div class="category-grid">
+                
+                <!-- CARD 1: TWO WHEELER -->
+                <div class="category-card card-bike">
+                    <div class="card-content-side">
+                        <div class="card-header-group">
+                            <div class="icon-circle icon-navy">
+                                <i class="fa-solid fa-motorcycle"></i>
+                            </div>
+                            <div>
+                                <h3 class="card-title" data-i18n="card1Title">TWO WHEELER</h3>
+                                <span class="card-subtitle" data-i18n="card1Sub">Repairing &amp; Spare Parts</span>
+                            </div>
+                        </div>
+                        <p class="card-desc" data-i18n="card1Desc">Complete repair, service and spare parts support.</p>
+                        <a href="#catalog" onclick="filterByVehicle('Two Wheeler')" class="btn btn-navy-sm">
+                            <span data-i18n="explore">Explore</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="card-image-side">
+                        <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=500&q=80" alt="Two Wheeler" onerror="this.onerror=null; this.src=getVehicleSVG('bike');">
+                    </div>
+                </div>
+
+                <!-- CARD 2: FOUR WHEELER -->
+                <div class="category-card card-car">
+                    <div class="card-content-side">
+                        <div class="card-header-group">
+                            <div class="icon-circle icon-red">
+                                <i class="fa-solid fa-car"></i>
+                            </div>
+                            <div>
+                                <h3 class="card-title" data-i18n="card2Title">FOUR WHEELER</h3>
+                                <span class="card-subtitle text-red" data-i18n="card2Sub">Spare Parts Available</span>
+                            </div>
+                        </div>
+                        <p class="card-desc" data-i18n="card2Desc">Spare parts for cars and four wheelers.</p>
+                        
+                        <div class="badge-parts-only mb-15">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <span data-i18n="badgePartsOnly">PARTS ONLY - NO CAR REPAIRING</span>
+                        </div>
+                        
+                        <a href="#catalog" onclick="filterByVehicle('Four Wheeler')" class="btn btn-navy-sm">
+                            <span data-i18n="exploreParts">Explore Parts</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="card-image-side">
+                        <img src="https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=500&q=80" alt="Four Wheeler Car" onerror="this.onerror=null; this.src=getVehicleSVG('car');">
+                    </div>
+                </div>
+
+                <!-- CARD 3: TRACTOR -->
+                <div class="category-card card-tractor">
+                    <div class="card-content-side">
+                        <div class="card-header-group">
+                            <div class="icon-circle icon-green">
+                                <i class="fa-solid fa-tractor"></i>
+                            </div>
+                            <div>
+                                <h3 class="card-title" data-i18n="card3Title">TRACTOR</h3>
+                                <span class="card-subtitle text-green" data-i18n="card3Sub">Complete Tractor Works</span>
+                            </div>
+                        </div>
+                        <p class="card-desc" data-i18n="card3Desc">Repairing, service and spare parts.</p>
+                        <a href="#tractor-section" class="btn btn-navy-sm">
+                            <span data-i18n="explore">Explore</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="card-image-side">
+                        <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=500&q=80" alt="Tractor" onerror="this.onerror=null; this.src=getVehicleSVG('tractor');">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SPARE PARTS CATALOG (MAIN FEATURE) -->
+    <section class="catalog-section" id="catalog">
+        <div class="container">
+            <div class="catalog-layout">
+                
+                <div class="catalog-main">
+                    <div class="section-header align-left">
+                        <h2 class="section-title" data-i18n="catalogHeading">SPARE PARTS CATALOG</h2>
+                        <p class="section-subtitle" data-i18n="catalogSubtitle">Find the part you need and contact us for availability.</p>
+                    </div>
+
+                    <!-- SEARCH AND FILTER CONTROLS -->
+                    <div class="catalog-filter-bar">
+                        <div class="search-input-group">
+                            <input type="text" id="searchInput" placeholder="Search spare parts..." data-i18n-placeholder="searchPlaceholder" oninput="handleSearchInput()">
+                            <button class="btn btn-red search-btn" onclick="executeSearch()">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+
+                        <div class="filter-dropdowns">
+                            <select id="vehicleFilter" onchange="applyFilters()">
+                                <option value="All" data-i18n="filterAllVehicles">All Vehicles</option>
+                                <option value="Two Wheeler" data-i18n="filterTwoWheeler">Two Wheeler</option>
+                                <option value="Four Wheeler" data-i18n="filterFourWheeler">Four Wheeler</option>
+                                <option value="Tractor" data-i18n="filterTractor">Tractor</option>
+                            </select>
+
+                            <select id="categoryFilter" onchange="applyFilters()">
+                                <option value="All" data-i18n="filterAllCategories">All Categories</option>
+                                <option value="Engine" data-i18n="catEngine">Engine</option>
+                                <option value="Brake" data-i18n="catBrake">Brake</option>
+                                <option value="Clutch" data-i18n="catClutch">Clutch</option>
+                                <option value="Electrical" data-i18n="catElectrical">Electrical</option>
+                                <option value="Battery" data-i18n="catBattery">Battery</option>
+                                <option value="Filters" data-i18n="catFilters">Filters</option>
+                                <option value="Tyres" data-i18n="catTyres">Tyres</option>
+                                <option value="Suspension" data-i18n="catSuspension">Suspension</option>
+                                <option value="Accessories" data-i18n="catAccessories">Accessories</option>
+                                <option value="Other" data-i18n="catOther">Other</option>
+                            </select>
+
+                            <select id="availabilityFilter" onchange="applyFilters()">
+                                <option value="All" data-i18n="filterAllAvailability">All Availability</option>
+                                <option value="Available" data-i18n="statusAvailable">Available</option>
+                                <option value="Confirm with Shop" data-i18n="statusConfirm">Confirm with Shop</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- SEARCH RESULTS BAR -->
+                    <div class="results-meta-bar">
+                        <span id="resultsCount" class="results-count">Showing 0 parts</span>
+                        <span class="stock-disclaimer" data-i18n="disclaimerText">* Availability subject to confirmation at shop</span>
+                    </div>
+
+                    <!-- PRODUCTS GRID -->
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Dynamic Part Cards Rendered via JS -->
+                    </div>
+
+                    <!-- EMPTY STATE WHEN NO RESULTS MATCH -->
+                    <div class="no-results-card hidden" id="noResultsCard">
+                        <i class="fa-solid fa-box-open empty-icon"></i>
+                        <h3 data-i18n="noResultsTitle">Part not found in our online catalog.</h3>
+                        <p data-i18n="noResultsDesc">Please contact us directly. We stock extensive inventory and can source your required part quickly.</p>
+                        <div class="no-results-buttons">
+                            <a href="https://wa.me/918790460012" class="btn btn-whatsapp" target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> <span data-i18n="whatsappUs">WhatsApp Us</span>
+                            </a>
+                            <a href="tel:8790460012" class="btn btn-red">
+                                <i class="fa-solid fa-phone"></i> <span data-i18n="callNow">Call Now</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- SIDE HIGHLIGHT BOX -->
+                <aside class="catalog-sidebar">
+                    <div class="cant-find-card">
+                        <div class="cant-find-icon">
+                            <i class="fa-solid fa-boxes-packing"></i>
+                        </div>
+                        <h3 data-i18n="cantFindTitle">Can't find your part?</h3>
+                        <p data-i18n="cantFindDesc">Contact us, we may have it available at our physical shop.</p>
+                        <div class="cant-find-actions">
+                            <a href="https://wa.me/918790460012" class="btn btn-whatsapp-sm" target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> <span data-i18n="whatsappUs">WhatsApp Us</span>
+                            </a>
+                            <a href="tel:8790460012" class="btn btn-outline-light-sm">
+                                <i class="fa-solid fa-phone"></i> <span data-i18n="callNow">Call Now</span>
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- REQUEST PART / SERVICE FORM SECTION -->
+    <section class="request-part-section" id="request-part">
+        <div class="container">
+            <div class="request-box">
+                <div class="section-header text-center">
+                    <h2 class="section-title text-white" data-i18n="reqFormTitle">REQUEST A SPARE PART / SERVICE</h2>
+                    <p class="section-subtitle text-gray" data-i18n="reqFormSub">Fill out the details below and get instant confirmation via WhatsApp or Call.</p>
+                </div>
+
+                <form id="partRequestForm" class="part-request-form" onsubmit="handleFormSubmit(event)">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="reqName" data-i18n="lblYourName">Your Name *</label>
+                            <input type="text" id="reqName" required placeholder="e.g. Ramesh Kumar">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reqPhone" data-i18n="lblMobileNumber">Mobile Number *</label>
+                            <input type="tel" id="reqPhone" required placeholder="e.g. 8790460012" pattern="[0-9]{10}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reqVehicleType" data-i18n="lblVehicleType">Vehicle Type *</label>
+                            <select id="reqVehicleType" required>
+                                <option value="Two Wheeler">Two Wheeler</option>
+                                <option value="Four Wheeler">Four Wheeler (Spare Parts Only)</option>
+                                <option value="Tractor">Tractor</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reqBrand" data-i18n="lblVehicleBrand">Vehicle Brand</label>
+                            <input type="text" id="reqBrand" placeholder="e.g. Hero, Maruti, Mahindra, John Deere">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reqModel" data-i18n="lblVehicleModel">Vehicle Model</label>
+                            <input type="text" id="reqModel" placeholder="e.g. Splendor, Swift, 575 DI">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reqPartName" data-i18n="lblPartName">Part Name / Service Required *</label>
+                            <input type="text" id="reqPartName" required placeholder="e.g. Oil Filter / Tractor Engine Service">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reqQuantity" data-i18n="lblQuantity">Quantity</label>
+                            <input type="number" id="reqQuantity" value="1" min="1" max="50">
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="reqNotes" data-i18n="lblNotes">Additional Requirements / Description</label>
+                            <textarea id="reqNotes" rows="3" placeholder="Provide any additional details or specs..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-submit-wrapper">
+                        <button type="submit" class="btn btn-whatsapp-lg">
+                            <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btnSendPartRequest">Send Request via WhatsApp</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title text-red" data-i18n="servicesHeading">OUR SERVICES</h2>
+                <p class="section-subtitle" data-i18n="servicesSub">Accurate &amp; Reliable Automobile Solutions</p>
+            </div>
+
+            <div class="services-grid">
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-motorcycle"></i>
+                    </div>
+                    <h4 data-i18n="srv2WRepair">Two Wheeler Repairing</h4>
+                    <p data-i18n="srv2WRepairDesc">Engine tuning, brake service, clutch repair, and complete general maintenance for all bike models.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                    <h4 data-i18n="srv2WParts">Two Wheeler Spare Parts</h4>
+                    <p data-i18n="srv2WPartsDesc">Genuine OEM and high quality replacement spare parts for all major two-wheeler brands.</p>
+                </div>
+
+                <div class="service-card card-highlight-red">
+                    <div class="service-icon text-red">
+                        <i class="fa-solid fa-car-side"></i>
+                    </div>
+                    <div class="badge-parts-only-sm mb-10">
+                        <span>PARTS ONLY</span>
+                    </div>
+                    <h4 data-i18n="srv4WParts">Four Wheeler Spare Parts</h4>
+                    <p data-i18n="srv4WPartsDesc">Full stock of car spare parts, filters, brake pads, electricals &amp; fluids. <em>(Car repairing not available)</em>.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon text-green">
+                        <i class="fa-solid fa-tractor"></i>
+                    </div>
+                    <h4 data-i18n="srvTractorWorks">Complete Tractor Works</h4>
+                    <p data-i18n="srvTractorWorksDesc">Full tractor mechanical repair, hydraulic system overhauling, clutch, brake &amp; engine servicing.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon text-green">
+                        <i class="fa-solid fa-oil-can"></i>
+                    </div>
+                    <h4 data-i18n="srvTractorParts">Tractor Spare Parts</h4>
+                    <p data-i18n="srvTractorPartsDesc">Genuine heavy duty tractor spares, hydraulic components, filters, bearings &amp; belts.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-toolbox"></i>
+                    </div>
+                    <h4 data-i18n="srvGeneralSpares">General Automobile Spare Parts</h4>
+                    <p data-i18n="srvGeneralSparesDesc">Automotive lubricants, batteries, bulbs, indicators, bearings, fasteners, and maintenance supplies.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DEDICATED TRACTOR SECTION -->
+    <section class="dedicated-tractor-section" id="tractor-section">
+        <div class="container">
+            <div class="tractor-banner-card">
+                <div class="tractor-img-col">
+                    <img src="https://images.unsplash.com/photo-1530267981375-f0de937f5f13?auto=format&fit=crop&w=800&q=80" alt="Complete Tractor Repair Works" onerror="this.onerror=null; this.src=getVehicleSVG('tractor');">
+                </div>
+                <div class="tractor-content-col">
+                    <div class="green-tag"><i class="fa-solid fa-tractor"></i> <span data-i18n="tractorTag">TRACTOR SPECIALIST</span></div>
+                    <h2 class="tractor-heading" data-i18n="completeTractorWorksHeading">COMPLETE TRACTOR WORKS</h2>
+                    <p class="tractor-sub" data-i18n="tractorWorksDesc">Expert technicians providing comprehensive repair, overhauling, servicing &amp; genuine spare parts for all tractor brands.</p>
+
+                    <div class="tractor-features-grid">
+                        <div class="feature-item"><i class="fa-solid fa-circle-check text-green"></i> <span data-i18n="featEngine">Engine Related Work</span></div>
+                        <div class="feature-item"><i class="fa-solid fa-circle-check text-green"></i> <span data-i18n="featClutch">Clutch &amp; Brake Work</span></div>
+                        <div class="feature-item"><i class="fa-solid fa-circle-check text-green"></i> <span data-i18n="featHydraulic">Hydraulic Work</span></div>
+                        <div class="feature-item"><i class="fa-solid fa-circle-check text-green"></i> <span data-i18n="featElectrical">Electrical Work</span></div>
+                        <div class="feature-item"><i class="fa-solid fa-circle-check text-green"></i> <span data-i18n="featSteering">Steering &amp; Suspension</span></div>
+                        <div class="feature-item"><i class="fa-solid fa-circle-check text-green"></i> <span data-i18n="featGeneral">General Maintenance</span></div>
+                        <div class="feature-item"><i class="fa-solid fa-circle-check text-green"></i> <span data-i18n="featTractorSpares">Tractor Spare Parts</span></div>
+                    </div>
+
+                    <a href="#request-part" onclick="prefillService('Tractor', 'Complete Tractor Repair Work')" class="btn btn-green-lg">
+                        <span data-i18n="btnRequestTractor">Request Tractor Service</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEDICATED FOUR WHEELER SECTION -->
+    <section class="dedicated-car-section">
+        <div class="container">
+            <div class="car-banner-card">
+                <div class="car-content-side">
+                    <div class="car-tag"><i class="fa-solid fa-car"></i> <span data-i18n="carTag">FOUR WHEELER / CARS</span></div>
+                    <h2 class="car-heading" data-i18n="carHeading">FOUR WHEELER SPARE PARTS</h2>
+                    <p class="car-text" data-i18n="carDesc">Spare parts available for cars and four wheelers. Quality guaranteed genuine lubricants, filters, pads &amp; electrical items.</p>
+
+                    <div class="badge-parts-only-lg mb-20">
+                        <i class="fa-solid fa-shield-triangle-exclamation"></i>
+                        <div>
+                            <strong data-i18n="carWarningTitle">PARTS ONLY</strong>
+                            <p data-i18n="carWarningSub">CAR REPAIRING NOT AVAILABLE</p>
+                        </div>
+                    </div>
+
+                    <div class="car-cta-buttons">
+                        <a href="#catalog" onclick="filterByVehicle('Four Wheeler')" class="btn btn-red">
+                            <i class="fa-solid fa-cubes"></i> <span data-i18n="btnBrowseCarParts">Browse Car Parts</span>
+                        </a>
+                        <a href="#request-part" onclick="prefillService('Four Wheeler', '')" class="btn btn-dark-outline">
+                            <i class="fa-solid fa-paper-plane"></i> <span data-i18n="btnRequestPart">Request a Part</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="car-img-side">
+                    <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=700&q=80" alt="Four Wheeler Spare Parts" onerror="this.onerror=null; this.src=getVehicleSVG('car');">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION & WHY CHOOSE US -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text-col">
+                    <div class="section-header align-left">
+                        <h2 class="section-title" data-i18n="aboutHeading">ABOUT SAI SRINIVASA AUTOMOBILES</h2>
+                        <p class="section-subtitle" data-i18n="aboutSub">Your One-Stop Auto Shop in Madhira</p>
+                    </div>
+                    <p class="about-paragraph" data-i18n="aboutP1">
+                        Located conveniently at Nemali X Road, Madhira (Wyra Road, Siripuram, Near Mallavaram Stage), Sai Srinivasa Automobiles is a dedicated provider of automotive services and spare parts. We specialize in comprehensive two-wheeler repairs, complete tractor mechanical overhauls, and supply high quality genuine spare parts for two-wheelers, four-wheelers, and tractors.
+                    </p>
+                    <p class="about-paragraph" data-i18n="aboutTeamInfo">
+                        Owned by RamBabu and supported by Veerababu, our mechanic who primarily handles tractor-related mechanical works.
+                    </p>
+                    <p class="about-paragraph" data-i18n="aboutP2">
+                        We take pride in transparent service, genuine replacement parts, and quick customer support through phone and WhatsApp.
+                    </p>
+                </div>
+
+                <div class="why-choose-col">
+                    <h3 class="why-heading" data-i18n="whyChooseTitle">WHY CHOOSE US</h3>
+                    <div class="why-cards-grid">
+                        <div class="why-card">
+                            <i class="fa-solid fa-boxes-stacked icon-red"></i>
+                            <h4 data-i18n="why1Title">Wide Range of Spare Parts</h4>
+                            <p data-i18n="why1Desc">Extensive stock of parts for Two Wheeler, Four Wheeler, and Tractors.</p>
+                        </div>
+                        <div class="why-card">
+                            <i class="fa-solid fa-wrench icon-navy"></i>
+                            <h4 data-i18n="why2Title">Two Wheeler Repairing</h4>
+                            <p data-i18n="why2Desc">Skilled technicians for complete motor bike repair &amp; servicing.</p>
+                        </div>
+                        <div class="why-card">
+                            <i class="fa-solid fa-tractor icon-green"></i>
+                            <h4 data-i18n="why3Title">Complete Tractor Works</h4>
+                            <p data-i18n="why3Desc">Expert heavy vehicle mechanics for tractor servicing &amp; repairs.</p>
+                        </div>
+                        <div class="why-card">
+                            <i class="fa-solid fa-headset icon-yellow"></i>
+                            <h4 data-i18n="why4Title">Easy Call &amp; WhatsApp Enquiry</h4>
+                            <p data-i18n="why4Desc">Instant stock availability confirmation over phone or chat.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEET OUR TEAM SECTION -->
+    <section class="team-section" id="team">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title" data-i18n="teamHeading">MEET OUR TEAM</h2>
+                <p class="section-subtitle" data-i18n="teamSub">The dedicated professionals behind Sai Srinivasa Automobiles</p>
+            </div>
+
+            <div class="team-grid">
+                
+                <!-- PERSON 1: RAMBABU -->
+                <div class="team-card">
+                    <div class="team-avatar-wrap">
+                        <img src="rambabu.jpg" alt="RamBabu - Proprietor" class="team-photo" onerror="this.onerror=null; this.src='rambabu2.jpg';">
+                        <div class="team-badge-icon badge-red-owner">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                    </div>
+                    <div class="team-card-content">
+                        <h3 class="team-name" data-i18n="team1Name">RamBabu</h3>
+                        <span class="team-role text-red" data-i18n="team1Role">Proprietor / Shop Owner</span>
+                        <p class="team-desc" data-i18n="team1Desc">RamBabu is the proprietor and owner of Sai Srinivasa Automobiles.</p>
+                        <div class="team-contact">
+                            <a href="tel:8790460012" class="contact-item">
+                                <span class="contact-icon">📞</span>
+                                <span>8790460012</span>
+                            </a>
+                            <a href="https://wa.me/918790460012" target="_blank" rel="noopener noreferrer" class="contact-item whatsapp">
+                                <span class="contact-icon">💬</span>
+                                <span>WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PERSON 2: VEERABABU -->
+                <div class="team-card">
+                    <div class="team-avatar-wrap">
+                        <img src="veerababu.jpg" alt="Veerababu - Mechanic" class="team-photo" onerror="this.onerror=null; this.src='veerababu.jpg';">
+                        <div class="team-badge-icon badge-green-mechanic">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                    </div>
+                    <div class="team-card-content">
+                        <h3 class="team-name" data-i18n="team2Name">Veerababu</h3>
+                        <span class="team-role text-green" data-i18n="team2Role">Mechanic / Automobile Technician</span>
+                        <p class="team-desc" data-i18n="team2Desc">Veerababu handles the shop's mechanical works, with a primary focus on complete tractor works.</p>
+                        <div class="team-contact">
+                            <a href="tel:9949515518" class="contact-item">
+                                <span class="contact-icon">📞</span>
+                                <span>9949515518</span>
+                            </a>
+                            <a href="https://wa.me/918790460012" target="_blank" rel="noopener noreferrer" class="contact-item whatsapp">
+                                <span class="contact-icon">💬</span>
+                                <span>WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title" data-i18n="galleryHeading">WORKSHOP &amp; SPARE PARTS GALLERY</h2>
+                <p class="section-subtitle" data-i18n="gallerySub">Take a visual tour of our shop, parts inventory and servicing works.</p>
+            </div>
+
+            <!-- GALLERY FILTERS -->
+            <div class="gallery-tabs">
+                <button class="gallery-tab active" onclick="filterGallery('all')" data-i18n="galAll">All</button>
+                <button class="gallery-tab" onclick="filterGallery('shop')" data-i18n="galShop">Shop</button>
+                <button class="gallery-tab" onclick="filterGallery('spares')" data-i18n="galSpareParts">Spare Parts</button>
+                <button class="gallery-tab" onclick="filterGallery('twowheeler')" data-i18n="galTwoWheeler">Two Wheeler</button>
+                <button class="gallery-tab" onclick="filterGallery('tractor')" data-i18n="galTractor">Tractor</button>
+            </div>
+
+            <!-- GALLERY GRID -->
+            <div class="gallery-grid" id="galleryGrid">
+                <div class="gallery-item" data-category="shop" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=600&q=80" alt="Shop Workshop Front" onerror="this.onerror=null; this.src=getGallerySVG('Shop');">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span data-i18n="galItem1">Shop Front &amp; Counter</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="spares" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80" alt="Spare Parts Stock" onerror="this.onerror=null; this.src=getGallerySVG('Spare Parts');">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span data-i18n="galItem2">Genuine Spare Parts Inventory</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="twowheeler" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=600&q=80" alt="Two Wheeler Servicing" onerror="this.onerror=null; this.src=getGallerySVG('Two Wheeler');">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span data-i18n="galItem3">Two Wheeler Maintenance</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="tractor" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1530267981375-f0de937f5f13?auto=format&fit=crop&w=600&q=80" alt="Tractor Engine Repair" onerror="this.onerror=null; this.src=getGallerySVG('Tractor');">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span data-i18n="galItem4">Tractor Overhauling Work</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="spares" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80" alt="Car Filters & Oils" onerror="this.onerror=null; this.src=getGallerySVG('Car Spares');">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span data-i18n="galItem5">Automotive Oils &amp; Filters</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="tractor" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=600&q=80" alt="Tractor Hydraulic Repair" onerror="this.onerror=null; this.src=getGallerySVG('Tractor Hydraulic');">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span data-i18n="galItem6">Tractor Hydraulic Service</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ ACCORDION SECTION -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title" data-i18n="faqHeading">FREQUENTLY ASKED QUESTIONS</h2>
+                <p class="section-subtitle" data-i18n="faqSub">Find quick answers to common questions about our services and parts.</p>
+            </div>
+
+            <div class="faq-accordion">
+                
+                <div class="faq-item active">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span data-i18n="faqQ1">Do you provide car repairing?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-i18n="faqA1">No. We provide four wheeler/car spare parts, but car repairing and servicing are not available.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span data-i18n="faqQ2">Do you repair two wheelers?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-i18n="faqA2">Yes, two wheeler repairing and servicing are available.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span data-i18n="faqQ3">Do you repair tractors?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-i18n="faqA3">Yes. Complete tractor works are available.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span data-i18n="faqQ4">Can I request a spare part through WhatsApp?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-i18n="faqA4">Yes. Send us the part details through WhatsApp and contact the shop for availability.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION (BOTH NUMBERS CLICKABLE CALL LINKS) -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                
+                <!-- CONTACT DETAILS CARD -->
+                <div class="contact-card">
+                    <div class="contact-card-header">
+                        <h2 class="contact-business-title">SAI SRINIVASA AUTOMOBILES</h2>
+                        <p class="contact-business-te">సాయి శ్రీనివాస ఆటోమొబైల్స్</p>
+                    </div>
+
+                    <div class="contact-info-list">
+                        <!-- BOTH NUMBERS CLICKABLE -->
+                        <div class="contact-info-item contact-primary-box">
+                            <i class="fa-solid fa-phone icon-red"></i>
+                            <div>
+                                <strong data-i18n="cntPhoneHeading">SHOP PHONE NUMBERS (CLICK TO CALL)</strong>
+                                <p class="main-phone-num">
+                                    <a href="tel:8790460012" class="link-main-phone"><i class="fa-solid fa-phone"></i> 📞 8790460012</a>
+                                    <span class="phone-split-slash">&nbsp;/&nbsp;</span>
+                                    <a href="tel:9949515518" class="link-main-phone"><i class="fa-solid fa-phone"></i> 📞 9949515518</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- WHATSAPP NUMBER HIGHLIGHT -->
+                        <div class="contact-info-item contact-secondary-box">
+                            <i class="fa-brands fa-whatsapp text-green"></i>
+                            <div>
+                                <strong data-i18n="cntWaHeading">WHATSAPP ENQUIRIES</strong>
+                                <p class="add-phone-num"><a href="https://wa.me/918790460012" target="_blank" class="text-green font-bold">💬 8790460012</a></p>
+                            </div>
+                        </div>
+
+                        <!-- CLICKABLE ADDRESS ITEM -->
+                        <div class="contact-info-item">
+                            <i class="fa-solid fa-location-dot icon-red"></i>
+                            <div>
+                                <strong data-i18n="cntAddress">Shop Location (Click for Google Maps)</strong>
+                                <p>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=SAI+SRINIVASA+AUTOMOBILES,+Madhira+-+Wyra+Road,+Near+Mallavaram,+Siripuram,+Madhira" 
+                                       target="_blank" rel="noopener noreferrer" 
+                                       class="contact-address-link" 
+                                       title="Open shop location in Google Maps"
+                                       data-i18n-title="topLocationTooltip">
+                                        Wyra Road, Siripuram<br>
+                                        Near Mallavaram Stage<br>
+                                        Nemali X Road, Madhira
+                                        <i class="fa-solid fa-arrow-up-right-from-square inline-map-icon"></i>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <i class="fa-regular fa-clock icon-red"></i>
+                            <div>
+                                <strong data-i18n="cntHours">Shop Hours</strong>
+                                <p>7:30 AM – 8:30 PM (Open Daily)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-action-buttons">
+                        <a href="tel:8790460012" class="btn btn-red">
+                            <i class="fa-solid fa-phone"></i> <span data-i18n="callNow">Call 8790460012</span>
+                        </a>
+                        <a href="tel:9949515518" class="btn btn-red">
+                            <i class="fa-solid fa-phone"></i> <span>Call 9949515518</span>
+                        </a>
+                        <a href="https://wa.me/918790460012" class="btn btn-whatsapp" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> <span data-i18n="whatsappUs">WhatsApp</span>
+                        </a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=SAI+SRINIVASA+AUTOMOBILES,+Madhira+-+Wyra+Road,+Near+Mallavaram,+Siripuram,+Madhira" 
+                           class="btn btn-dark-outline" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-map-location-dot"></i> <span data-i18n="getDirections">Get Directions</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- MAP / LOCATION CARD (CLICKABLE CARD & BUTTON) -->
+                <div class="map-card" onclick="window.open('https://www.google.com/maps/search/?api=1&query=SAI+SRINIVASA+AUTOMOBILES,+Madhira+-+Wyra+Road,+Near+Mallavaram,+Siripuram,+Madhira', '_blank')">
+                    <div class="map-visual-placeholder">
+                        <div class="map-overlay">
+                            <div class="map-pin">
+                                <i class="fa-solid fa-location-dot text-red location-bounce"></i>
+                            </div>
+                            <div class="map-label">
+                                <strong>SAI SRINIVASA AUTOMOBILES</strong>
+                                <span>Nemali X Road, Madhira • Wyra Road</span>
+                            </div>
+                        </div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=SAI+SRINIVASA+AUTOMOBILES,+Madhira+-+Wyra+Road,+Near+Mallavaram,+Siripuram,+Madhira" 
+                           class="btn btn-red btn-map-launch" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
+                            <i class="fa-solid fa-diamond-turn-right"></i> <span data-i18n="openInGoogleMaps">Open Directions in Google Maps</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                
+                <div class="footer-col brand-col">
+                    <div class="logo-text">
+                        <span class="logo-title text-white">SAI SRINIVASA</span>
+                        <span class="logo-subtitle text-red">AUTOMOBILES</span>
+                    </div>
+                    <p class="footer-desc" data-i18n="footerDesc">
+                        Your trusted destination for Two Wheeler Repairing, Four Wheeler Spare Parts, and Complete Tractor Works in Madhira.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-i18n="footerServices">Our Offerings</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services" data-i18n="srv2WRepair">Two Wheeler Repairing</a></li>
+                        <li><a href="#catalog" onclick="filterByVehicle('Four Wheeler')" data-i18n="srv4WParts">Four Wheeler Spare Parts</a></li>
+                        <li><a href="#tractor-section" data-i18n="srvTractorWorks">Complete Tractor Works</a></li>
+                        <li><a href="#catalog" data-i18n="srvGeneralSpares">Automobile Spare Parts</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-i18n="footerQuickLinks">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home" data-i18n="navHome">Home</a></li>
+                        <li><a href="#about" data-i18n="navAbout">About</a></li>
+                        <li><a href="#team" data-i18n="navTeam">Meet Our Team</a></li>
+                        <li><a href="#services" data-i18n="navServices">Services</a></li>
+                        <li><a href="#catalog" data-i18n="navSpareParts">Spare Parts</a></li>
+                        <li><a href="#request-part" data-i18n="navRequestPart">Request Part</a></li>
+                        <li><a href="#contact" data-i18n="navContact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-i18n="footerContactInfo">Contact Info</h4>
+                    <div class="footer-contact-details">
+                        <p><i class="fa-solid fa-phone text-red"></i> <a href="tel:8790460012" class="text-white">📞 8790460012</a> &nbsp;|&nbsp; <a href="tel:9949515518" class="text-white">📞 9949515518</a></p>
+                        <p><i class="fa-brands fa-whatsapp text-green"></i> <a href="https://wa.me/918790460012" target="_blank" class="text-green">WhatsApp: 8790460012</a></p>
+                        <p>
+                            <i class="fa-solid fa-location-dot text-red"></i> 
+                            <a href="https://www.google.com/maps/search/?api=1&query=SAI+SRINIVASA+AUTOMOBILES,+Madhira+-+Wyra+Road,+Near+Mallavaram,+Siripuram,+Madhira" 
+                               target="_blank" rel="noopener noreferrer" class="text-gray footer-loc-link">
+                                Wyra Road, Siripuram, Near Mallavaram Stage, Nemali X Road, Madhira
+                            </a>
+                        </p>
+                        <p><i class="fa-regular fa-clock text-red"></i> 7:30 AM – 8:30 PM</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Sai Srinivasa Automobiles. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTTOM FLOATING ACTION BAR FOR MOBILE & QUICK CONTACT -->
+    <div class="floating-actions">
+        <div class="floating-feature-bar">
+            <span class="feat-pill"><i class="fa-solid fa-box text-red"></i> <span data-i18n="footFeat1">Wide Range of Spare Parts</span></span>
+            <span class="feat-pill"><i class="fa-solid fa-shield-halved text-red"></i> <span data-i18n="footFeat2">Quality &amp; Genuine Parts</span></span>
+            <span class="feat-pill"><i class="fa-solid fa-user-gear text-red"></i> <span data-i18n="footFeat3">Experienced Technicians</span></span>
+            <span class="feat-pill"><i class="fa-solid fa-headset text-red"></i> <span data-i18n="footFeat4">Easy Call &amp; WhatsApp Support</span></span>
+        </div>
+        
+        <div class="floating-buttons-group">
+            <a href="https://wa.me/918790460012" class="floating-btn btn-float-wa" target="_blank" title="WhatsApp Us (8790460012)">
+                <i class="fa-brands fa-whatsapp"></i> <span class="hide-mobile">WhatsApp</span>
+            </a>
+            <a href="tel:8790460012" class="floating-btn btn-float-call" title="Call 8790460012">
+                <i class="fa-solid fa-phone"></i> <span class="hide-mobile">Call 8790460012</span>
+            </a>
+            <!--<a href="tel:9949515518" class="floating-btn btn-float-call" title="Call 9949515518">
+                <i class="fa-solid fa-phone"></i> <span class="hide-mobile">Call 9949515518</span>
+            </a> -->
+            <button id="backToTopBtn" class="floating-btn btn-float-top" onclick="scrollToTop()" title="Back to Top">
+                <i class="fa-solid fa-arrow-up"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- PART DETAILS MODAL -->
+    <div class="modal-overlay hidden" id="partModal">
+        <div class="modal-card">
+            <button class="modal-close-btn" onclick="closePartModal()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-body-grid">
+                <div class="modal-img-wrapper">
+                    <img id="modalPartImg" src="" alt="Part Details" onerror="this.onerror=null; this.src=getVehicleSVG('part');">
+                </div>
+
+                <div class="modal-info-side">
+                    <div class="modal-pills">
+                        <span id="modalVehicleBadge" class="badge-tag">Two Wheeler</span>
+                        <span id="modalCategoryBadge" class="badge-tag tag-gray">Brake</span>
+                    </div>
+
+                    <h2 id="modalPartTitle" class="modal-part-title">Brake Pad Kit</h2>
+                    
+                    <div class="modal-meta">
+                        <span class="meta-label" data-i18n="modalCompatible">Compatible Models:</span>
+                        <p id="modalCompatibleText">All standard models</p>
+                    </div>
+
+                    <div class="modal-meta">
+                        <span class="meta-label" data-i18n="modalDesc">Description:</span>
+                        <p id="modalDescText">High friction long-lasting brake pads.</p>
+                    </div>
+
+                    <div class="modal-meta-row">
+                        <div>
+                            <span class="meta-label" data-i18n="modalPrice">Price:</span>
+                            <strong class="price-val">Contact Shop</strong>
+                        </div>
+                        <div>
+                            <span class="meta-label" data-i18n="modalStatus">Availability:</span>
+                            <span id="modalAvailabilityBadge" class="badge-available">Available</span>
+                        </div>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button id="modalReqBtn" class="btn btn-red" onclick="requestFromModal()">
+                            <i class="fa-solid fa-paper-plane"></i> <span data-i18n="btnRequestThisPart">Request This Part</span>
+                        </button>
+                        <a id="modalWaBtn" href="https://wa.me/918790460012" class="btn btn-whatsapp" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX MODAL FOR GALLERY -->
+    <div class="modal-overlay hidden" id="lightboxModal" onclick="closeLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <img id="lightboxImg" src="" alt="Full view">
+            <p id="lightboxCaption" class="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
