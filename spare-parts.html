@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Spare Parts Catalog | Sai Srinivasa Automobiles | Madhira</title>
+    <meta name="description" content="Complete spare parts catalog for Two Wheeler, Four Wheeler and Tractors at Sai Srinivasa Automobiles, Nemali X Road, Madhira. Contact 8790460012 / 9949515518.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-spare-parts">
+
+    <!-- TOP INFORMATION BAR -->
+    <div class="top-bar">
+        <div class="container top-bar-container">
+            <!-- Row 1 on Mobile / Left Section on Desktop: Location & Hours -->
+            <div class="top-row-primary">
+                <a href="https://maps.app.goo.gl/gzANgB9HYMzjCrRR6" 
+                   target="_blank" rel="noopener noreferrer" 
+                   class="top-location-link" 
+                   title="Open shop location in Google Maps"
+                   data-i18n-title="topLocationTooltip">
+                    <i class="fa-solid fa-location-dot location-pulse"></i>
+                    <span class="desktop-address" data-i18n="topAddress">Wyra Road, Siripuram, Near Mallavaram Stage, Nemali X Road, Madhira</span>
+                    <span class="mobile-address" data-i18n="topAddressMobile">Wyra Road, Siripuram, Madhira</span>
+                    <i class="fa-solid fa-up-right-from-square mini-map-icon"></i>
+                </a>
+                <span class="top-bar-divider">|</span>
+                <div class="top-info-center">
+                    <i class="fa-regular fa-clock"></i>
+                    <span id="topHoursText" data-i18n="topHours">7:30 AM – 8:30 PM</span>
+                </div>
+            </div>
+
+            <!-- Row 2 on Mobile / Right Section on Desktop: Phones, Profiles & Language -->
+            <div class="top-row-secondary">
+                <div class="phone-group">
+                    <a href="tel:8790460012" class="top-phone-link" title="Call 8790460012">
+                        <i class="fa-solid fa-phone"></i> <span>8790460012</span>
+                    </a>
+                    <span class="divider">|</span>
+                    <a href="tel:9949515518" class="top-phone-link" title="Call 9949515518">
+                        <i class="fa-solid fa-phone"></i> <span>9949515518</span>
+                    </a>
+                </div>
+
+                <!-- PROPRIETOR & MECHANIC PROFILE CARDS IN TOP BAR (ALWAYS SIDE BY SIDE) -->
+                <div class="top-team-profiles">
+                    <a href="index.html#team" class="top-profile-card" title="RamBabu — Proprietor" data-i18n-title="tooltipRamBabu">
+                        <img src="rambabu.jpg" alt="RamBabu" class="top-profile-avatar avatar-border-red" onerror="this.onerror=null; this.src='rambabu2.jpg';">
+                        <div class="top-profile-text">
+                            <span class="top-profile-name">RamBabu</span>
+                            <span class="top-profile-role" data-i18n="roleProprietor">Proprietor</span>
+                        </div>
+                    </a>
+                    <a href="index.html#team" class="top-profile-card" title="Veerababu — Mechanic" data-i18n-title="tooltipVeerababu">
+                        <img src="veerababu.jpg" alt="Veerababu" class="top-profile-avatar avatar-border-green" onerror="this.onerror=null; this.src='veerababu.jpg';">
+                        <div class="top-profile-text">
+                            <span class="top-profile-name">Veerababu</span>
+                            <span class="top-profile-role" data-i18n="roleMechanic">Mechanic</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="lang-switch">
+                    <button id="lang-en" class="lang-btn lang-en-btn active" onclick="switchLanguage('en')">English</button>
+                    <span class="lang-divider">|</span>
+                    <button id="lang-te" class="lang-btn lang-te-btn" onclick="switchLanguage('te')">తెలుగు</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER & NAVIGATION -->
+    <header class="main-header" id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-gear gear-spin"></i>
+                    <i class="fa-solid fa-wrench wrench-icon"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">SAI SRINIVASA</span>
+                    <span class="logo-subtitle" data-i18n="logoSub">AUTOMOBILES</span>
+                </div>
+            </a>
+
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html#home" class="nav-link" data-i18n="navHome">Home</a></li>
+                    <li><a href="index.html#about" class="nav-link" data-i18n="navAbout">About</a></li>
+                    <li><a href="index.html#services" class="nav-link" data-i18n="navServices">Services</a></li>
+                    <li><a href="spare-parts.html" class="nav-link active" data-i18n="navSpareParts">Spare Parts</a></li>
+                    <li><a href="#request-part" class="nav-link" data-i18n="navRequestPart">Request Part</a></li>
+                    <li><a href="index.html#contact" class="nav-link" data-i18n="navContact">Contact</a></li>
+                    <li class="nav-lang-item">
+                        <div class="header-lang-pill" title="Switch Language / భాషను మార్చండి">
+                            <button class="header-lang-btn lang-en-btn active" onclick="switchLanguage('en')">English</button>
+                            <span class="header-lang-sep">|</span>
+                            <button class="header-lang-btn lang-te-btn" onclick="switchLanguage('te')">తెలుగు</button>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- HEADER ACTIONS (OWNER LOGIN / DASHBOARD & CALL) -->
+            <div class="header-actions">
+                <button id="ownerLoginBtn" class="btn btn-dark-outline btn-owner-login" onclick="openOwnerLoginModal()">
+                    <i class="fa-solid fa-user-lock"></i> <span data-i18n="ownerLoginBtn">Owner Login</span>
+                </button>
+
+                <button id="ownerDashboardToggleBtn" class="btn btn-navy-sm btn-owner-dash" style="display: none;" onclick="document.getElementById('ownerDashboardSection').scrollIntoView({ behavior: 'smooth' })">
+                    <i class="fa-solid fa-gauge-high"></i> <span data-i18n="ownerDashboardBtn">Owner Dashboard</span>
+                </button>
+
+                <button id="ownerLogoutBtn" class="btn btn-dark-outline btn-logout" style="display: none;" onclick="handleOwnerLogout()">
+                    <i class="fa-solid fa-right-from-bracket"></i> <span data-i18n="ownerLogoutBtn">Logout</span>
+                </button>
+
+                <a href="tel:8790460012" class="btn btn-call-now" title="Call Shop: 8790460012">
+                    <i class="fa-solid fa-phone"></i> <span data-i18n="callNow">Call Now</span>
+                </a>
+                
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- PAGE HERO BANNER -->
+    <section class="catalog-page-hero">
+        <div class="container">
+            <div class="catalog-hero-content">
+                <a href="index.html" class="back-link">
+                    <i class="fa-solid fa-arrow-left"></i> <span data-i18n="backToHome">Home</span>
+                </a>
+                <h1 class="catalog-hero-title" data-i18n="allPartsHeading">ALL SPARE PARTS CATALOG</h1>
+                <p class="catalog-hero-sub" data-i18n="allPartsSubtitle">Search our complete inventory, filter by vehicle or category, and contact us for instant availability.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- OWNER / ADMIN DASHBOARD (VISIBLE ONLY AFTER LOGIN) -->
+    <section class="admin-dashboard-section hidden" id="ownerDashboardSection">
+        <div class="container">
+            <div class="admin-dashboard-box">
+                <div class="admin-dashboard-header">
+                    <div class="admin-title-group">
+                        <div class="admin-badge"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div>
+                            <h2 class="admin-heading" data-i18n="dashboardTitle">Owner / Admin Dashboard</h2>
+                            <p class="admin-sub" data-i18n="dashboardSubtitle">Add new spare parts, edit details, or remove inventory.</p>
+                        </div>
+                    </div>
+                    <div class="admin-tabs">
+                        <button class="admin-tab active" id="adminTabAdd" onclick="switchAdminTab('add')" data-i18n="tabAddPart">Add Spare Part</button>
+                        <button class="admin-tab" id="adminTabManage" onclick="switchAdminTab('manage')" data-i18n="tabManageParts">Manage Inventory</button>
+                    </div>
+                </div>
+
+                <!-- TAB PANE 1: ADD / EDIT PART FORM -->
+                <div class="admin-pane" id="adminPaneAdd">
+                    <form id="adminPartForm" onsubmit="handlePartFormSubmit(event)">
+                        <input type="hidden" id="adminEditId" value="">
+                        <input type="hidden" id="adminImageData" value="">
+
+                        <div class="admin-form-grid">
+                            <!-- Left: Drag & Drop Image Upload -->
+                            <div class="admin-image-col">
+                                <label class="admin-field-label">
+                                    <span data-i18n="lblDragDrop">Drag &amp; Drop Part Image Here</span>
+                                </label>
+                                
+                                <div class="image-dropzone" id="imageDropzone">
+                                    <div id="dropzonePrompt" class="dropzone-prompt">
+                                        <i class="fa-solid fa-cloud-arrow-up drop-icon"></i>
+                                        <p class="dropzone-text" data-i18n="lblDragDrop">Drag &amp; Drop Part Image Here</p>
+                                        <span class="dropzone-or" data-i18n="dropzoneOr">or</span>
+                                        <label for="partImageFile" class="btn btn-navy-sm dropzone-btn">
+                                            <i class="fa-solid fa-image"></i> <span data-i18n="lblChooseImage">Choose Image</span>
+                                        </label>
+                                        <input type="file" id="partImageFile" accept="image/*" class="file-input-hidden">
+                                    </div>
+
+                                    <div id="imagePreviewContainer" class="image-preview-container hidden">
+                                        <img id="imagePreviewImg" src="" alt="Preview">
+                                        <button type="button" class="btn-remove-img" onclick="removePartImage()" title="Remove Image">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right: Part Details -->
+                            <div class="admin-fields-col">
+                                <div class="form-row-2">
+                                    <div class="form-group">
+                                        <label for="adminPartName" data-i18n="lblPartNameForm">Part Name *</label>
+                                        <input type="text" id="adminPartName" required placeholder="e.g. Heavy Duty Clutch Plate Set">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="adminVehicleType" data-i18n="lblVehicleTypeForm">Vehicle Type *</label>
+                                        <select id="adminVehicleType" required>
+                                            <option value="Two Wheeler">Two Wheeler</option>
+                                            <option value="Four Wheeler">Four Wheeler</option>
+                                            <option value="Tractor">Tractor</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-row-2">
+                                    <div class="form-group">
+                                        <label for="adminCategory" data-i18n="lblCategoryForm">Category *</label>
+                                        <select id="adminCategory" required>
+                                            <option value="Engine">Engine</option>
+                                            <option value="Brake">Brake</option>
+                                            <option value="Clutch">Clutch</option>
+                                            <option value="Electrical">Electrical</option>
+                                            <option value="Battery">Battery</option>
+                                            <option value="Filters">Filters</option>
+                                            <option value="Tyres">Tyres</option>
+                                            <option value="Suspension">Suspension</option>
+                                            <option value="Accessories">Accessories</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="adminCompatible" data-i18n="lblCompatibleForm">Compatible Models *</label>
+                                        <input type="text" id="adminCompatible" required placeholder="e.g. Hero Passion, Pulsar 150, Honda Shine">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="adminDesc" data-i18n="lblDescForm">Description</label>
+                                    <textarea id="adminDesc" rows="2" placeholder="High heat resistant friction plates ensuring smooth gear pickup..."></textarea>
+                                </div>
+
+                                <div class="form-row-2">
+                                    <div class="form-group">
+                                        <label for="adminPrice" data-i18n="lblPriceForm">Price</label>
+                                        <input type="text" id="adminPrice" value="Contact Shop" placeholder="Contact Shop">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="adminAvailability" data-i18n="lblAvailabilityForm">Availability</label>
+                                        <select id="adminAvailability">
+                                            <option value="Available" selected>Available</option>
+                                            <option value="Confirm with Shop">Confirm with Shop</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="admin-form-actions">
+                                    <button type="submit" class="btn btn-red" id="btnSubmitPart">
+                                        <i class="fa-solid fa-plus-circle"></i> <span data-i18n="btnSavePart">Save Spare Part</span>
+                                    </button>
+                                    <button type="button" class="btn btn-dark-outline hidden" id="btnCancelEdit" onclick="resetPartForm()">
+                                        <span data-i18n="btnCancelEdit">Cancel</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- TAB PANE 2: MANAGE PARTS TABLE -->
+                <div class="admin-pane hidden" id="adminPaneManage">
+                    <div class="admin-manage-bar">
+                        <div class="admin-search-wrap">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" id="adminSearchInput" placeholder="Search parts in dashboard..." data-i18n-placeholder="adminSearchPlaceholder" oninput="renderAdminPartsTable()">
+                        </div>
+                        <span id="adminPartsCount" class="admin-count-pill">Total parts: 0</span>
+                    </div>
+
+                    <div class="admin-table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th data-i18n="thPart">Part</th>
+                                    <th data-i18n="thVehicle">Vehicle</th>
+                                    <th data-i18n="thCategory">Category</th>
+                                    <th data-i18n="thPrice">Price</th>
+                                    <th data-i18n="thAvailability">Availability</th>
+                                    <th data-i18n="thActions">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminPartsTableBody">
+                                <!-- Dynamic admin rows rendered via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPLETE SPARE PARTS CATALOG SECTION -->
+    <section class="catalog-section" id="catalog">
+        <div class="container">
+            <div class="catalog-layout">
+                
+                <div class="catalog-main">
+                    <div class="section-header align-left catalog-header-flex">
+                        <div class="catalog-header-text">
+                            <h2 class="section-title" data-i18n="catalogHeading">SPARE PARTS CATALOG</h2>
+                            <p class="section-subtitle" data-i18n="catalogSubtitle">Find the part you need and contact us for availability.</p>
+                        </div>
+                        <a href="#searchInput" class="btn btn-red btn-search-parts-mobile" onclick="document.getElementById('searchInput').focus();">
+                            <i class="fa-solid fa-magnifying-glass"></i> <span data-i18n="searchParts">Search Parts</span>
+                        </a>
+                    </div>
+
+                    <!-- SEARCH AND FILTER CONTROLS -->
+                    <div class="catalog-filter-bar">
+                        <div class="search-input-group">
+                            <input type="text" id="searchInput" placeholder="Search spare parts..." data-i18n-placeholder="searchPlaceholder" oninput="handleSearchInput()">
+                            <button class="btn btn-red search-btn" onclick="executeSearch()">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+
+                        <div class="filter-dropdowns">
+                            <select id="vehicleFilter" onchange="applyFilters()">
+                                <option value="All" data-i18n="filterAllVehicles">All Vehicles</option>
+                                <option value="Two Wheeler" data-i18n="filterTwoWheeler">Two Wheeler</option>
+                                <option value="Four Wheeler" data-i18n="filterFourWheeler">Four Wheeler</option>
+                                <option value="Tractor" data-i18n="filterTractor">Tractor</option>
+                            </select>
+
+                            <select id="categoryFilter" onchange="applyFilters()">
+                                <option value="All" data-i18n="filterAllCategories">All Categories</option>
+                                <option value="Engine" data-i18n="catEngine">Engine</option>
+                                <option value="Brake" data-i18n="catBrake">Brake</option>
+                                <option value="Clutch" data-i18n="catClutch">Clutch</option>
+                                <option value="Electrical" data-i18n="catElectrical">Electrical</option>
+                                <option value="Battery" data-i18n="catBattery">Battery</option>
+                                <option value="Filters" data-i18n="catFilters">Filters</option>
+                                <option value="Tyres" data-i18n="catTyres">Tyres</option>
+                                <option value="Suspension" data-i18n="catSuspension">Suspension</option>
+                                <option value="Accessories" data-i18n="catAccessories">Accessories</option>
+                                <option value="Other" data-i18n="catOther">Other</option>
+                            </select>
+
+                            <select id="availabilityFilter" onchange="applyFilters()">
+                                <option value="All" data-i18n="filterAllAvailability">All Availability</option>
+                                <option value="Available" data-i18n="statusAvailable">Available</option>
+                                <option value="Confirm with Shop" data-i18n="statusConfirm">Confirm with Shop</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- SEARCH RESULTS BAR -->
+                    <div class="results-meta-bar">
+                        <span id="resultsCount" class="results-count">Showing 0 parts</span>
+                        <span class="stock-disclaimer" data-i18n="disclaimerText">* Availability subject to confirmation at shop</span>
+                    </div>
+
+                    <!-- COMPLETE PRODUCTS GRID -->
+                    <div class="products-grid" id="productsGrid">
+                        <!-- All stored parts dynamically rendered via JS -->
+                    </div>
+
+                    <!-- EMPTY STATE WHEN NO RESULTS MATCH -->
+                    <div class="no-results-card hidden" id="noResultsCard">
+                        <i class="fa-solid fa-box-open empty-icon"></i>
+                        <h3 data-i18n="noResultsTitle">Part not found in our online catalog.</h3>
+                        <p data-i18n="noResultsDesc">Please contact us directly. We stock extensive inventory and can source your required part quickly.</p>
+                        <div class="no-results-buttons">
+                            <a href="https://wa.me/918790460012" class="btn btn-whatsapp" target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> <span data-i18n="whatsappUs">WhatsApp Us</span>
+                            </a>
+                            <a href="tel:8790460012" class="btn btn-red">
+                                <i class="fa-solid fa-phone"></i> <span data-i18n="callNow">Call Now</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- SIDE STICKY HIGHLIGHT BOX -->
+                <aside class="catalog-sidebar">
+                    <div class="cant-find-card">
+                        <div class="cant-find-icon">
+                            <i class="fa-solid fa-boxes-packing"></i>
+                        </div>
+                        <h3 data-i18n="cantFindTitle">Can't find your part?</h3>
+                        <p data-i18n="cantFindDesc">Contact us, we may have it available at our physical shop.</p>
+                        <div class="cant-find-actions">
+                            <a href="https://wa.me/918790460012" class="btn btn-whatsapp-sm" target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> <span data-i18n="whatsappUs">WhatsApp Us</span>
+                            </a>
+                            <a href="tel:8790460012" class="btn btn-outline-light-sm">
+                                <i class="fa-solid fa-phone"></i> <span data-i18n="callNow">Call Now</span>
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- REQUEST PART / SERVICE FORM SECTION -->
+    <section class="request-part-section" id="request-part">
+        <div class="container">
+            <div class="request-box">
+                <div class="section-header text-center">
+                    <h2 class="section-title text-white" data-i18n="reqFormTitle">REQUEST A SPARE PART / SERVICE</h2>
+                    <p class="section-subtitle text-gray" data-i18n="reqFormSub">Fill out the details below and get instant confirmation via WhatsApp or Call.</p>
+                </div>
+
+                <form id="partRequestForm" class="part-request-form" onsubmit="handleFormSubmit(event)">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="reqName" data-i18n="lblYourName">Your Name *</label>
+                            <input type="text" id="reqName" required placeholder="e.g. Ramesh Kumar">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reqPhone" data-i18n="lblMobileNumber">Mobile Number *</label>
+                            <input type="tel" id="reqPhone" required placeholder="e.g. 8790460012" pattern="[0-9]{10}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reqVehicleType" data-i18n="lblVehicleType">Vehicle Type *</label>
+                            <select id="reqVehicleType" required>
+                                <option value="Two Wheeler">Two Wheeler</option>
+                                <option value="Four Wheeler">Four Wheeler (Spare Parts Only)</option>
+                                <option value="Tractor">Tractor</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reqBrand" data-i18n="lblVehicleBrand">Vehicle Brand</label>
+                            <input type="text" id="reqBrand" placeholder="e.g. Hero, Maruti, Mahindra, John Deere">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reqModel" data-i18n="lblVehicleModel">Vehicle Model</label>
+                            <input type="text" id="reqModel" placeholder="e.g. Splendor, Swift, 575 DI">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reqPartName" data-i18n="lblPartName">Part Name / Service Required *</label>
+                            <input type="text" id="reqPartName" required placeholder="e.g. Oil Filter / Brake Pads">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reqQuantity" data-i18n="lblQuantity">Quantity</label>
+                            <input type="number" id="reqQuantity" value="1" min="1" max="50">
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="reqNotes" data-i18n="lblNotes">Additional Requirements / Description</label>
+                            <textarea id="reqNotes" rows="3" placeholder="Provide any additional details or specs..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-submit-wrapper">
+                        <button type="submit" class="btn btn-whatsapp-lg">
+                            <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btnSendPartRequest">Send Request via WhatsApp</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                
+                <div class="footer-col brand-col">
+                    <div class="logo-text">
+                        <span class="logo-title text-white">SAI SRINIVASA</span>
+                        <span class="logo-subtitle text-red">AUTOMOBILES</span>
+                    </div>
+                    <p class="footer-desc" data-i18n="footerDesc">
+                        Your trusted destination for Two Wheeler Repairing, Four Wheeler Spare Parts, and Complete Tractor Works in Madhira.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-i18n="footerServices">Our Offerings</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#services" data-i18n="srv2WRepair">Two Wheeler Repairing</a></li>
+                        <li><a href="spare-parts.html?vehicle=Four+Wheeler" data-i18n="srv4WParts">Four Wheeler Spare Parts</a></li>
+                        <li><a href="index.html#tractor-section" data-i18n="srvTractorWorks">Complete Tractor Works</a></li>
+                        <li><a href="spare-parts.html" data-i18n="srvGeneralSpares">Automobile Spare Parts</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-i18n="footerQuickLinks">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home" data-i18n="navHome">Home</a></li>
+                        <li><a href="index.html#about" data-i18n="navAbout">About</a></li>
+                        <li><a href="index.html#team" data-i18n="navTeam">Meet Our Team</a></li>
+                        <li><a href="index.html#services" data-i18n="navServices">Services</a></li>
+                        <li><a href="spare-parts.html" data-i18n="navSpareParts">Spare Parts</a></li>
+                        <li><a href="#request-part" data-i18n="navRequestPart">Request Part</a></li>
+                        <li><a href="index.html#contact" data-i18n="navContact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-i18n="footerContactInfo">Contact Info</h4>
+                    <div class="footer-contact-details">
+                        <p><i class="fa-solid fa-phone text-red"></i> <a href="tel:8790460012" class="text-white">8790460012</a> &nbsp;|&nbsp; <a href="tel:9949515518" class="text-gray">9949515518</a></p>
+                        <p><i class="fa-brands fa-whatsapp text-green"></i> <a href="https://wa.me/918790460012" target="_blank" class="text-green">WhatsApp: 8790460012</a></p>
+                        <p>
+                            <i class="fa-solid fa-location-dot text-red location-pulse"></i> 
+                            <a href="https://maps.app.goo.gl/gzANgB9HYMzjCrRR6" 
+                               target="_blank" rel="noopener noreferrer" class="text-gray footer-loc-link">
+                                Wyra Road, Siripuram, Near Mallavaram Stage, Nemali X Road, Madhira
+                            </a>
+                        </p>
+                        <p><i class="fa-regular fa-clock text-red"></i> 7:30 AM – 8:30 PM</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Sai Srinivasa Automobiles. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTTOM FLOATING ACTION BAR FOR MOBILE -->
+    <div class="floating-actions">
+        <div class="floating-feature-bar">
+            <span class="feat-pill"><i class="fa-solid fa-box text-red"></i> <span data-i18n="footFeat1">Wide Range of Spare Parts</span></span>
+            <span class="feat-pill"><i class="fa-solid fa-shield-halved text-red"></i> <span data-i18n="footFeat2">Quality &amp; Genuine Parts</span></span>
+            <span class="feat-pill"><i class="fa-solid fa-user-gear text-red"></i> <span data-i18n="footFeat3">Experienced Technicians</span></span>
+            <span class="feat-pill"><i class="fa-solid fa-headset text-red"></i> <span data-i18n="footFeat4">Easy Call &amp; WhatsApp Support</span></span>
+        </div>
+        
+        <div class="floating-buttons-group">
+            <a href="https://wa.me/918790460012" class="floating-btn btn-float-wa" target="_blank" title="WhatsApp Us (8790460012)">
+                <i class="fa-brands fa-whatsapp"></i> 
+                <span class="float-btn-text">
+                    <span class="float-main-text" data-i18n="whatsappUs">WhatsApp Us</span>
+                    <span class="float-sub-phone">8790460012</span>
+                </span>
+            </a>
+            <a href="tel:8790460012" class="floating-btn btn-float-call" title="Call 8790460012">
+                <i class="fa-solid fa-phone"></i> <span>Call 8790460012</span>
+            </a>    
+            <a href="tel:9949515518" class="floating-btn btn-float-call-sec" title="Call 9949515518">
+                <i class="fa-solid fa-phone"></i> <span>Call 9949515518</span>
+            </a>
+            <button id="backToTopBtn" class="floating-btn btn-float-top" onclick="scrollToTop()" title="Back to Top">
+                <i class="fa-solid fa-arrow-up"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- PART DETAILS MODAL -->
+    <div class="modal-overlay hidden" id="partModal">
+        <div class="modal-card">
+            <button class="modal-close-btn" onclick="closePartModal()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-body-grid">
+                <div class="modal-img-wrapper">
+                    <img id="modalPartImg" src="" alt="Part Details" onerror="this.onerror=null; this.src=getVehicleSVG('part');">
+                </div>
+
+                <div class="modal-info-side">
+                    <div class="modal-pills">
+                        <span id="modalVehicleBadge" class="badge-tag">Two Wheeler</span>
+                        <span id="modalCategoryBadge" class="badge-tag tag-gray">Brake</span>
+                    </div>
+
+                    <h2 id="modalPartTitle" class="modal-part-title">Brake Pad Kit</h2>
+                    
+                    <div class="modal-meta">
+                        <span class="meta-label" data-i18n="modalCompatible">Compatible Models:</span>
+                        <p id="modalCompatibleText">All standard models</p>
+                    </div>
+
+                    <div class="modal-meta">
+                        <span class="meta-label" data-i18n="modalDesc">Description:</span>
+                        <p id="modalDescText">High friction long-lasting brake pads.</p>
+                    </div>
+
+                    <div class="modal-meta-row">
+                        <div>
+                            <span class="meta-label" data-i18n="modalPrice">Price:</span>
+                            <strong class="price-val">Contact Shop</strong>
+                        </div>
+                        <div>
+                            <span class="meta-label" data-i18n="modalStatus">Availability:</span>
+                            <span id="modalAvailabilityBadge" class="badge-available">Available</span>
+                        </div>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button id="modalReqBtn" class="btn btn-red" onclick="requestFromModal()">
+                            <i class="fa-solid fa-paper-plane"></i> <span data-i18n="btnRequestThisPart">Request This Part</span>
+                        </button>
+                        <a id="modalWaBtn" href="https://wa.me/918790460012" class="btn btn-whatsapp" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OWNER / ADMIN LOGIN MODAL -->
+    <div class="modal-overlay hidden" id="ownerLoginModal">
+        <div class="modal-card modal-login-card">
+            <button class="modal-close-btn" onclick="closeOwnerLoginModal()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="login-modal-header text-center">
+                <div class="login-icon-circle">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h2 class="login-title" data-i18n="loginModalTitle">Owner Login</h2>
+                <p class="login-subtitle text-gray" data-i18n="loginModalSubtitle">Enter credentials to manage spare parts inventory.</p>
+            </div>
+
+            <form id="ownerLoginForm" onsubmit="handleOwnerLogin(event)" class="login-form">
+                <div id="loginErrorMsg" class="login-error-msg hidden" data-i18n="loginErrorMsg">Invalid username or password. Please try again.</div>
+
+                <div class="form-group mb-15">
+                    <label for="loginUsername" data-i18n="lblUsername">Username</label>
+                    <input type="text" id="loginUsername" required autocomplete="username" placeholder="Ram gummidelli">
+                </div>
+
+                <div class="form-group mb-20">
+                    <label for="loginPassword" data-i18n="lblPassword">Password</label>
+                    <input type="password" id="loginPassword" required autocomplete="current-password" placeholder="••••••••">
+                </div>
+
+                <button type="submit" class="btn btn-red btn-block">
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i> <span data-i18n="btnLogin">Login</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
