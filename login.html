@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Login | Sai Srinivasa Automobiles | Madhira</title>
+    <meta name="description" content="Secure Owner Authentication Login Portal for Sai Srinivasa Automobiles.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ============================================================
+           FORGOT PASSWORD — ADDITIONAL STYLES
+           ============================================================ */
+
+        /* Step panels */
+        .fp-panel { display: none; }
+        .fp-panel.active { display: block; }
+
+        /* Step indicator */
+        .fp-steps {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            margin: 0 0 28px;
+        }
+        .fp-step-dot {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            color: #999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            flex-shrink: 0;
+            transition: background 0.2s, color 0.2s;
+        }
+        .fp-step-dot.active  { background: #b01c28; color: #fff; }
+        .fp-step-dot.done    { background: #2e7d32; color: #fff; }
+        .fp-step-line {
+            flex: 1;
+            height: 2px;
+            background: #e0e0e0;
+            min-width: 24px;
+            max-width: 60px;
+        }
+        .fp-step-line.done { background: #2e7d32; }
+
+        /* Success / info boxes */
+        .fp-info-box {
+            background: #fff8e1;
+            border: 1px solid #ffe082;
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 0.84rem;
+            color: #5d4037;
+            margin-bottom: 16px;
+        }
+        .fp-success-box {
+            background: #e8f5e9;
+            border: 1px solid #a5d6a7;
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 0.85rem;
+            color: #1b5e20;
+            margin-bottom: 16px;
+        }
+
+        /* Error alert inside forgot-password */
+        .fp-error {
+            background: #fdecea;
+            border: 1px solid #f5c6c6;
+            border-radius: 8px;
+            padding: 10px 14px;
+            color: #b01c28;
+            font-size: 0.85rem;
+            margin-bottom: 14px;
+        }
+
+        /* Back link */
+        .fp-back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #b01c28;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            margin-top: 14px;
+            text-decoration: none;
+        }
+        .fp-back-link:hover { text-decoration: underline; }
+
+        /* Forgot password link on login form */
+        .forgot-pw-link {
+            display: block;
+            text-align: right;
+            margin: -14px 0 18px;
+            font-size: 0.83rem;
+        }
+        .forgot-pw-link a {
+            color: #b01c28;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .forgot-pw-link a:hover { text-decoration: underline; }
+
+        /* Password requirements */
+        .pw-requirements {
+            font-size: 0.78rem;
+            color: #777;
+            margin: 4px 0 14px;
+            line-height: 1.6;
+        }
+        .pw-req-item { display: flex; align-items: center; gap: 6px; }
+        .pw-req-item .req-icon { font-size: 10px; }
+        .pw-req-item.ok  { color: #2e7d32; }
+        .pw-req-item.ok  .req-icon::before { content: '✓'; }
+        .pw-req-item:not(.ok) .req-icon::before { content: '•'; }
+
+        /* Password show/hide toggle */
+        .pw-toggle-wrap { position: relative; }
+        .pw-toggle-wrap input { padding-right: 42px; }
+        .pw-toggle-btn {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #999;
+            font-size: 14px;
+            padding: 0;
+            line-height: 1;
+        }
+        .pw-toggle-btn:hover { color: #555; }
+
+        /* Countdown */
+        .fp-countdown {
+            font-size: 0.78rem;
+            color: #888;
+            text-align: center;
+            margin-top: 8px;
+        }
+        .fp-countdown span { font-weight: 700; color: #b01c28; }
+
+        /* Resend link */
+        .fp-resend {
+            display: none;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.83rem;
+        }
+        .fp-resend a {
+            color: #b01c28;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .fp-resend a:hover { text-decoration: underline; }
+
+        /* Responsive tweaks for login card on small screens */
+        @media (max-width: 480px) {
+            .login-card-standalone { padding: 24px 14px; }
+            .fp-step-line { min-width: 14px; max-width: 32px; }
+        }
+    </style>
+</head>
+<body class="page-login">
+
+    <!-- HEADER BAR -->
+    <header class="owner-header">
+        <div class="owner-header-left">
+            <a href="index.html" class="btn-back-website" title="Return to public website">
+                <i class="fa-solid fa-arrow-left"></i> <span>Back to Website</span>
+            </a>
+
+            <div class="owner-brand-group">
+                <a href="index.html" class="owner-brand-title">
+                    <span class="text-red">SAI SRINIVASA</span> <span class="text-white">AUTOMOBILES</span>
+                </a>
+                <span class="badge-owner-console" id="pageBadge">OWNER LOGIN</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- LOGIN / FORGOT PASSWORD CONTAINER -->
+    <div class="login-page-container">
+        <div class="login-card-standalone">
+
+            <!-- =====================================================
+                 PANEL A — NORMAL LOGIN
+            ====================================================== -->
+            <div id="panelLogin" class="fp-panel active">
+                <div class="login-card-header text-center">
+                    <div class="login-icon-circle">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h1 class="login-title">Owner Portal Authentication</h1>
+                    <p class="login-subtitle">Enter your credentials to manage shop inventory and customer requests.</p>
+                </div>
+
+                <form id="standaloneLoginForm" onsubmit="handleStandaloneLogin(event)" class="login-form" autocomplete="on">
+                    <div id="loginErrorAlert" class="login-error-msg hidden">Invalid username or password. Please try again.</div>
+
+                    <div class="form-group mb-20">
+                        <label for="standaloneUsername">USERNAME / EMAIL</label>
+                        <input type="text" id="standaloneUsername" required autocomplete="username" placeholder="Enter username or email">
+                    </div>
+
+                    <div class="form-group mb-10">
+                        <label for="standalonePassword">PASSWORD</label>
+                        <div class="pw-toggle-wrap">
+                            <input type="password" id="standalonePassword" required autocomplete="current-password" placeholder="Enter password">
+                            <button type="button" class="pw-toggle-btn" onclick="togglePw('standalonePassword', this)" aria-label="Show/hide password">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="forgot-pw-link">
+                        <a href="#" id="forgotPwLink" onclick="showForgotPassword(); return false;">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-red btn-block btn-lg btn-pill-lg">
+                        <i class="fa-solid fa-right-to-bracket"></i> <span>Login to Owner Console</span>
+                    </button>
+                </form>
+
+                <div id="setupPromptBox" class="mt-20 text-center hidden">
+                    <a href="setup.html" class="text-red font-bold" style="font-size: 0.88rem; text-decoration: none;">
+                        <i class="fa-solid fa-user-gear"></i> No owner account found? First-Time Setup &rarr;
+                    </a>
+                </div>
+
+                <div class="login-footer-info">
+                    <p><i class="fa-solid fa-lock"></i> Protected Owner System &bull; Sai Srinivasa Automobiles</p>
+                </div>
+            </div><!-- /panelLogin -->
+
+
+            <!-- =====================================================
+                 PANEL B — FORGOT PASSWORD (3 steps)
+            ====================================================== -->
+            <div id="panelForgotPw" class="fp-panel">
+                <div class="login-card-header text-center">
+                    <div class="login-icon-circle">
+                        <i class="fa-solid fa-key"></i>
+                    </div>
+                    <h1 class="login-title">Reset Password</h1>
+                    <p class="login-subtitle">We'll send a one-time code to your registered email.</p>
+                </div>
+
+                <!-- Step indicator -->
+                <div class="fp-steps" id="fpStepIndicator">
+                    <div class="fp-step-dot active" id="fpDot1" title="Step 1: Enter Email">1</div>
+                    <div class="fp-step-line" id="fpLine1"></div>
+                    <div class="fp-step-dot" id="fpDot2" title="Step 2: Verify Code">2</div>
+                    <div class="fp-step-line" id="fpLine2"></div>
+                    <div class="fp-step-dot" id="fpDot3" title="Step 3: New Password">3</div>
+                </div>
+
+                <!-- STEP 1: Email -->
+                <div id="fpStep1" class="fp-panel active">
+                    <div id="fpStep1Error" class="fp-error hidden"></div>
+                    <div class="fp-info-box">
+                        <i class="fa-solid fa-circle-info"></i>
+                        Enter the email address registered to the owner account.
+                    </div>
+                    <div class="form-group mb-20">
+                        <label for="fpEmail">REGISTERED EMAIL</label>
+                        <input type="email" id="fpEmail" autocomplete="email" placeholder="Enter registered email address" required>
+                    </div>
+                    <button type="button" class="btn btn-red btn-block btn-pill-lg" id="fpSendBtn" onclick="fpSendCode()">
+                        <i class="fa-solid fa-paper-plane"></i> <span id="fpSendBtnText">Send Verification Code</span>
+                    </button>
+                    <div class="text-center mt-14">
+                        <button class="fp-back-link" onclick="showLogin()">
+                            <i class="fa-solid fa-arrow-left"></i> Back to Login
+                        </button>
+                    </div>
+                </div><!-- /fpStep1 -->
+
+                <!-- STEP 2: Enter Code -->
+                <div id="fpStep2" class="fp-panel">
+                    <div id="fpStep2Error" class="fp-error hidden"></div>
+                    <div class="fp-success-box">
+                        <i class="fa-solid fa-circle-check"></i>
+                        If that email is registered, a 6-digit code has been sent. Check your inbox.
+                    </div>
+                    <div class="form-group mb-20">
+                        <label for="fpCode">VERIFICATION CODE</label>
+                        <input type="text" id="fpCode" autocomplete="one-time-code"
+                               placeholder="Enter 6-digit code"
+                               maxlength="6" inputmode="numeric" pattern="\d{6}"
+                               style="letter-spacing: 8px; font-size: 1.4rem; text-align: center; font-weight: 700;">
+                    </div>
+                    <div class="fp-countdown" id="fpCountdown">
+                        Code expires in <span id="fpTimer">10:00</span>
+                    </div>
+                    <div class="fp-resend" id="fpResendBox">
+                        Didn't receive it? <a href="#" onclick="fpResend(); return false;">Resend Code</a>
+                    </div>
+                    <br>
+                    <button type="button" class="btn btn-red btn-block btn-pill-lg" onclick="fpVerifyCode()">
+                        <i class="fa-solid fa-check-circle"></i> <span>Verify Code</span>
+                    </button>
+                    <div class="text-center mt-14">
+                        <button class="fp-back-link" onclick="fpGoToStep(1)">
+                            <i class="fa-solid fa-arrow-left"></i> Change Email
+                        </button>
+                    </div>
+                </div><!-- /fpStep2 -->
+
+                <!-- STEP 3: New Password -->
+                <div id="fpStep3" class="fp-panel">
+                    <div id="fpStep3Error" class="fp-error hidden"></div>
+                    <div class="fp-success-box">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Code verified. Set your new password below.
+                    </div>
+                    <div class="form-group mb-10">
+                        <label for="fpNewPw">NEW PASSWORD</label>
+                        <div class="pw-toggle-wrap">
+                            <input type="password" id="fpNewPw" autocomplete="new-password"
+                                   placeholder="New password" oninput="fpCheckPwStrength()">
+                            <button type="button" class="pw-toggle-btn" onclick="togglePw('fpNewPw', this)" aria-label="Show/hide">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="pw-requirements" id="fpPwReqs">
+                        <div class="pw-req-item" id="fpReqLen"><span class="req-icon"></span>At least 8 characters</div>
+                        <div class="pw-req-item" id="fpReqUpper"><span class="req-icon"></span>One uppercase letter</div>
+                        <div class="pw-req-item" id="fpReqLower"><span class="req-icon"></span>One lowercase letter</div>
+                        <div class="pw-req-item" id="fpReqNum"><span class="req-icon"></span>One number</div>
+                        <div class="pw-req-item" id="fpReqSpecial"><span class="req-icon"></span>One special character</div>
+                    </div>
+                    <div class="form-group mb-20">
+                        <label for="fpConfirmPw">CONFIRM NEW PASSWORD</label>
+                        <div class="pw-toggle-wrap">
+                            <input type="password" id="fpConfirmPw" autocomplete="new-password"
+                                   placeholder="Confirm new password">
+                            <button type="button" class="pw-toggle-btn" onclick="togglePw('fpConfirmPw', this)" aria-label="Show/hide">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-red btn-block btn-pill-lg" onclick="fpSetNewPassword()">
+                        <i class="fa-solid fa-lock"></i> <span>Update Password</span>
+                    </button>
+                </div><!-- /fpStep3 -->
+
+                <!-- STEP 4: Success -->
+                <div id="fpStep4" class="fp-panel">
+                    <div style="text-align:center; padding: 20px 0 10px;">
+                        <i class="fa-solid fa-circle-check" style="font-size: 3rem; color: #2e7d32;"></i>
+                        <h2 style="color: #1b5e20; margin: 16px 0 8px; font-size: 1.3rem;">Password Updated!</h2>
+                        <p style="color: #555; font-size: 0.9rem; margin-bottom: 24px;">
+                            Your password has been reset successfully.<br>
+                            Please log in with your new password.
+                        </p>
+                        <button class="btn btn-red btn-pill-lg" onclick="showLogin()">
+                            <i class="fa-solid fa-right-to-bracket"></i> Go to Login
+                        </button>
+                    </div>
+                </div><!-- /fpStep4 -->
+
+            </div><!-- /panelForgotPw -->
+
+        </div><!-- /login-card-standalone -->
+    </div><!-- /login-page-container -->
+
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <script>
+        /* =========================================================
+           FORGOT PASSWORD STATE
+        ========================================================= */
+        let fpCurrentEmail    = '';
+        let fpResetToken      = '';
+        let fpTimerInterval   = null;
+        let fpTimerSecondsLeft = 600; // 10 minutes
+
+        /* =========================================================
+           PANEL SWITCHING
+        ========================================================= */
+        function showLogin() {
+            document.getElementById('panelLogin').classList.add('active');
+            document.getElementById('panelForgotPw').classList.remove('active');
+            document.getElementById('pageBadge').textContent = 'OWNER LOGIN';
+            fpStopTimer();
+        }
+
+        function showForgotPassword() {
+            document.getElementById('panelLogin').classList.remove('active');
+            document.getElementById('panelForgotPw').classList.add('active');
+            document.getElementById('pageBadge').textContent = 'RESET PASSWORD';
+            fpGoToStep(1);
+        }
+
+        function fpGoToStep(step) {
+            // Hide all steps
+            [1,2,3,4].forEach(n => {
+                document.getElementById('fpStep' + n).classList.remove('active');
+            });
+            // Show target step
+            document.getElementById('fpStep' + step).classList.add('active');
+
+            // Update step dots
+            ['fpDot1','fpDot2','fpDot3'].forEach((id, i) => {
+                const dot = document.getElementById(id);
+                dot.classList.remove('active','done');
+                if (i + 1 < step)       dot.classList.add('done');
+                else if (i + 1 === step) dot.classList.add('active');
+            });
+            // Update connector lines
+            ['fpLine1','fpLine2'].forEach((id, i) => {
+                document.getElementById(id).classList.toggle('done', step > i + 2);
+            });
+        }
+
+        /* =========================================================
+           STEP 1 — SEND CODE
+        ========================================================= */
+        async function fpSendCode() {
+            const email   = (document.getElementById('fpEmail').value || '').trim();
+            const errEl   = document.getElementById('fpStep1Error');
+            const btn     = document.getElementById('fpSendBtn');
+            const btnText = document.getElementById('fpSendBtnText');
+
+            fpHideError(errEl);
+
+            if (!email) { fpShowError(errEl, 'Please enter your email address.'); return; }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                fpShowError(errEl, 'Please enter a valid email address.'); return;
+            }
+
+            btn.disabled = true;
+            btnText.textContent = 'Sending...';
+
+            try {
+                const res  = await fetch('/api/auth/forgot-password', {
+                    method:  'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body:    JSON.stringify({ email })
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    fpCurrentEmail = email;
+                    fpGoToStep(2);
+                    fpStartTimer();
+                } else {
+                    fpShowError(errEl, data.error || 'Failed to send reset code. Please try again.');
+                }
+            } catch (err) {
+                fpShowError(errEl, 'Server connection error. Please try again.');
+            } finally {
+                btn.disabled = false;
+                btnText.textContent = 'Send Verification Code';
+            }
+        }
+
+        /* =========================================================
+           STEP 2 — VERIFY CODE
+        ========================================================= */
+        async function fpVerifyCode() {
+            const code  = (document.getElementById('fpCode').value || '').trim();
+            const errEl = document.getElementById('fpStep2Error');
+
+            fpHideError(errEl);
+
+            if (!code) { fpShowError(errEl, 'Please enter the 6-digit verification code.'); return; }
+            if (!/^\d{6}$/.test(code)) { fpShowError(errEl, 'Code must be exactly 6 digits.'); return; }
+
+            try {
+                const res  = await fetch('/api/auth/verify-reset-code', {
+                    method:  'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body:    JSON.stringify({ email: fpCurrentEmail, code })
+                });
+                const data = await res.json();
+
+                if (data.success && data.resetToken) {
+                    fpResetToken = data.resetToken;
+                    fpStopTimer();
+                    fpGoToStep(3);
+                } else {
+                    fpShowError(errEl, data.error || 'Invalid or expired code.');
+                }
+            } catch (err) {
+                fpShowError(errEl, 'Server connection error. Please try again.');
+            }
+        }
+
+        /* =========================================================
+           STEP 2 — RESEND CODE
+        ========================================================= */
+        async function fpResend() {
+            fpStopTimer();
+            document.getElementById('fpCode').value = '';
+            fpHideError(document.getElementById('fpStep2Error'));
+
+            const resendBox = document.getElementById('fpResendBox');
+            resendBox.style.display = 'none';
+
+            // Re-send by going back to step 1 and submitting with stored email
+            document.getElementById('fpEmail').value = fpCurrentEmail;
+            fpGoToStep(1);
+            await fpSendCode();
+        }
+
+        /* =========================================================
+           STEP 3 — SET NEW PASSWORD
+        ========================================================= */
+        async function fpSetNewPassword() {
+            const newPw     = document.getElementById('fpNewPw').value;
+            const confirmPw = document.getElementById('fpConfirmPw').value;
+            const errEl     = document.getElementById('fpStep3Error');
+
+            fpHideError(errEl);
+
+            if (!newPw)     { fpShowError(errEl, 'Please enter a new password.'); return; }
+            if (!confirmPw) { fpShowError(errEl, 'Please confirm your new password.'); return; }
+            if (newPw !== confirmPw) { fpShowError(errEl, 'Passwords do not match.'); return; }
+
+            // Client-side strength check (mirrors server)
+            const pwErrs = fpValidatePw(newPw);
+            if (pwErrs.length > 0) { fpShowError(errEl, pwErrs.join(' ')); return; }
+
+            if (!fpResetToken) {
+                fpShowError(errEl, 'Reset session expired. Please start over.');
+                return;
+            }
+
+            try {
+                const res  = await fetch('/api/auth/reset-password', {
+                    method:  'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body:    JSON.stringify({ resetToken: fpResetToken, newPassword: newPw, confirmPassword: confirmPw })
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    fpResetToken = '';
+                    fpGoToStep(4);
+                } else {
+                    fpShowError(errEl, data.error || 'Failed to update password. Please try again.');
+                }
+            } catch (err) {
+                fpShowError(errEl, 'Server connection error. Please try again.');
+            }
+        }
+
+        /* =========================================================
+           PASSWORD STRENGTH (CLIENT-SIDE MIRROR)
+        ========================================================= */
+        function fpValidatePw(pwd) {
+            const errs = [];
+            if (!pwd || pwd.length < 8)      errs.push('At least 8 characters.');
+            if (!/[A-Z]/.test(pwd))          errs.push('One uppercase letter.');
+            if (!/[a-z]/.test(pwd))          errs.push('One lowercase letter.');
+            if (!/[0-9]/.test(pwd))          errs.push('One number.');
+            if (!/[^A-Za-z0-9]/.test(pwd))  errs.push('One special character.');
+            return errs;
+        }
+
+        function fpCheckPwStrength() {
+            const pwd = document.getElementById('fpNewPw').value;
+            const set = (id, ok) => {
+                const el = document.getElementById(id);
+                if (ok) el.classList.add('ok'); else el.classList.remove('ok');
+            };
+            set('fpReqLen',     pwd.length >= 8);
+            set('fpReqUpper',   /[A-Z]/.test(pwd));
+            set('fpReqLower',   /[a-z]/.test(pwd));
+            set('fpReqNum',     /[0-9]/.test(pwd));
+            set('fpReqSpecial', /[^A-Za-z0-9]/.test(pwd));
+        }
+
+        /* =========================================================
+           COUNTDOWN TIMER
+        ========================================================= */
+        function fpStartTimer() {
+            fpTimerSecondsLeft = 600;
+            fpStopTimer();
+            document.getElementById('fpResendBox').style.display = 'none';
+            fpUpdateTimerDisplay();
+            fpTimerInterval = setInterval(() => {
+                fpTimerSecondsLeft--;
+                fpUpdateTimerDisplay();
+                if (fpTimerSecondsLeft <= 0) {
+                    fpStopTimer();
+                    document.getElementById('fpCountdown').innerHTML =
+                        '<span style="color:#b01c28;">Code expired.</span>';
+                    document.getElementById('fpResendBox').style.display = 'block';
+                }
+            }, 1000);
+        }
+
+        function fpStopTimer() {
+            if (fpTimerInterval) { clearInterval(fpTimerInterval); fpTimerInterval = null; }
+        }
+
+        function fpUpdateTimerDisplay() {
+            const m = Math.floor(fpTimerSecondsLeft / 60).toString().padStart(2, '0');
+            const s = (fpTimerSecondsLeft % 60).toString().padStart(2, '0');
+            const el = document.getElementById('fpTimer');
+            if (el) el.textContent = `${m}:${s}`;
+        }
+
+        /* =========================================================
+           UI HELPERS
+        ========================================================= */
+        function fpShowError(el, msg) {
+            if (!el) return;
+            el.textContent = msg;
+            el.classList.remove('hidden');
+        }
+        function fpHideError(el) {
+            if (!el) return;
+            el.textContent = '';
+            el.classList.add('hidden');
+        }
+
+        /* Password show/hide toggle */
+        function togglePw(inputId, btn) {
+            const inp = document.getElementById(inputId);
+            if (!inp) return;
+            const isHidden = inp.type === 'password';
+            inp.type = isHidden ? 'text' : 'password';
+            const icon = btn.querySelector('i');
+            if (icon) {
+                icon.className = isHidden ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye';
+            }
+        }
+
+        /* =========================================================
+           SETUP STATUS CHECK
+        ========================================================= */
+        document.addEventListener("DOMContentLoaded", async () => {
+            try {
+                const res  = await fetch("/api/auth/setup-status", { credentials: "include" });
+                const data = await res.json();
+                if (data.setupRequired) {
+                    const promptBox = document.getElementById("setupPromptBox");
+                    if (promptBox) promptBox.classList.remove("hidden");
+                }
+            } catch (err) {
+                console.warn("Setup status check warning:", err);
+            }
+        });
+    </script>
+</body>
+</html>

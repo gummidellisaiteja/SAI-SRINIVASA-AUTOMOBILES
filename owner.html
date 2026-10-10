@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Console | Sai Srinivasa Automobiles | Madhira</title>
+    <meta name="description" content="Owner Management Console for Sai Srinivasa Automobiles - Manage spare parts inventory and customer requests.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-owner-console">
+
+    <!-- TOP CONSOLE HEADER -->
+    <header class="owner-header">
+        <div class="owner-header-left">
+            <a href="index.html" class="btn-back-website" title="Return to public website">
+                <i class="fa-solid fa-arrow-left"></i> <span>Back to Website</span>
+            </a>
+
+            <div class="owner-brand-group">
+                <a href="index.html" class="owner-brand-title">
+                    <span class="text-red">SAI SRINIVASA</span> <span class="text-white">AUTOMOBILES</span>
+                </a>
+                <span class="badge-owner-console">OWNER CONSOLE</span>
+            </div>
+        </div>
+
+        <div class="owner-header-right">
+            <div class="owner-profile-pill">
+                <img src="rambabu.jpg" alt="RamBabu" class="owner-avatar" onerror="this.onerror=null; this.src='rambabu2.jpg';">
+                <span class="owner-login-text">
+                    Logged in as: <strong class="text-white">RamBabu (Proprietor)</strong>
+                </span>
+            </div>
+
+            <button onclick="handleOwnerLogout()" class="btn-owner-logout" title="Logout from console">
+                <i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span>
+            </button>
+
+            <!-- MOBILE HAMBURGER FOR SIDEBAR -->
+            <button class="owner-hamburger-btn" id="ownerHamburgerBtn" onclick="toggleOwnerMobileSidebar()" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN CONSOLE LAYOUT (SIDEBAR + CONTENT) -->
+    <div class="owner-console-layout">
+
+        <!-- SIDEBAR NAVIGATION -->
+        <aside class="owner-sidebar" id="ownerSidebar">
+            <div class="sidebar-mobile-header">
+                <span class="sidebar-title">NAVIGATION</span>
+                <button class="sidebar-close-btn" onclick="toggleOwnerMobileSidebar()">&times;</button>
+            </div>
+
+            <nav class="sidebar-menu">
+                <button class="sidebar-item active" id="sideNavDashboard" onclick="switchOwnerTab('dashboard')">
+                    <i class="fa-solid fa-gauge-high"></i>
+                    <span>Dashboard Overview</span>
+                </button>
+
+                <button class="sidebar-item" id="sideNavInventory" onclick="switchOwnerTab('inventory')">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                    <span>Spare Parts</span>
+                    <span class="sidebar-badge badge-parts" id="sidebarPartsCount">11</span>
+                </button>
+
+                <button class="sidebar-item" id="sideNavAddPart" onclick="switchOwnerTab('add-part')">
+                    <i class="fa-solid fa-circle-plus"></i>
+                    <span>Add Spare Part</span>
+                </button>
+
+                <button class="sidebar-item" id="sideNavRequests" onclick="switchOwnerTab('requests')">
+                    <i class="fa-solid fa-inbox"></i>
+                    <span>Customer Requests</span>
+                    <span class="sidebar-badge badge-req" id="sidebarRequestsCount">3</span>
+                </button>
+
+                <button class="sidebar-item" id="sideNavPayments" onclick="switchOwnerTab('payments')">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <span>Payment History</span>
+                </button>
+
+                <button class="sidebar-item" id="sideNavSettings" onclick="switchOwnerTab('settings')">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </button>
+
+                <button class="sidebar-item btn-sidebar-logout" onclick="handleOwnerLogout()">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </button>
+            </nav>
+        </aside>
+
+        <!-- SIDEBAR MOBILE OVERLAY -->
+        <div class="owner-sidebar-overlay hidden" id="ownerSidebarOverlay" onclick="toggleOwnerMobileSidebar()"></div>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="owner-main-area">
+
+            <!-- TAB 1: DASHBOARD OVERVIEW -->
+            <section class="owner-tab-panel" id="viewDashboard">
+                <div class="panel-header">
+                    <h1 class="panel-title">Dashboard Overview</h1>
+                    <p class="panel-subtitle">Summary metrics for Sai Srinivasa Automobiles inventory &amp; customer inquiries.</p>
+                </div>
+
+                <!-- 4 METRIC CARDS GRID -->
+                <div class="metric-cards-grid">
+                    <div class="metric-card">
+                        <div class="metric-card-top">
+                            <span class="metric-label">Total Parts Catalogued</span>
+                            <div class="metric-icon-box icon-red">
+                                <i class="fa-solid fa-box"></i>
+                            </div>
+                        </div>
+                        <div class="metric-val" id="metricPartsCount">11</div>
+                        <div class="metric-subtext text-green">
+                            <i class="fa-solid fa-circle-check"></i> In Stock / Available
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-card-top">
+                            <span class="metric-label">Customer Inquiries</span>
+                            <div class="metric-icon-box icon-amber">
+                                <i class="fa-solid fa-file-lines"></i>
+                            </div>
+                        </div>
+                        <div class="metric-val" id="metricInquiriesCount">3</div>
+                        <div class="metric-subtext text-amber">
+                            <i class="fa-solid fa-envelope"></i> Direct form requests
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-card-top">
+                            <span class="metric-label">Tractor Works Queue</span>
+                            <div class="metric-icon-box icon-green">
+                                <i class="fa-solid fa-wrench"></i>
+                            </div>
+                        </div>
+                        <div class="metric-val" id="metricTractorQueueCount">0</div>
+                        <div class="metric-subtext text-green">
+                            <i class="fa-solid fa-user-check"></i> Veerababu Specialist
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-card-top">
+                            <span class="metric-label">Available Parts</span>
+                            <div class="metric-icon-box icon-blue">
+                                <i class="fa-solid fa-cubes"></i>
+                            </div>
+                        </div>
+                        <div class="metric-val" id="metricAvailablePartsCount">11</div>
+                        <div class="metric-subtext text-green">
+                            <i class="fa-solid fa-circle pulse-dot green-dot"></i> Shop Open Today
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RECENT SERVICE & PART REQUESTS BOX -->
+                <div class="owner-card-box mt-30">
+                    <div class="card-box-header">
+                        <h2 class="card-box-title">RECENT SERVICE &amp; PART REQUESTS</h2>
+                        <button onclick="switchOwnerTab('requests')" class="link-view-all">View All &rarr;</button>
+                    </div>
+
+                    <div class="recent-requests-list" id="recentRequestsList">
+                        <!-- Dynamic Recent Request Rows Rendered via JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 2: INVENTORY MANAGEMENT (SPARE PARTS) -->
+            <section class="owner-tab-panel hidden" id="viewInventory">
+                <div class="panel-header flex-between">
+                    <div>
+                        <h1 class="panel-title">Inventory Management</h1>
+                        <p class="panel-subtitle">View, filter, toggle stock availability or remove spare parts.</p>
+                    </div>
+                    <button onclick="switchOwnerTab('add-part')" class="btn btn-red btn-pill btn-add-header">
+                        <i class="fa-solid fa-plus"></i> <span>Add New Part</span>
+                    </button>
+                </div>
+
+                <!-- FILTER CONTROLS BAR -->
+                <div class="inventory-controls-bar">
+                    <div class="search-wrap">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="ownerSearchInput" placeholder="Search spare parts in inventory..." oninput="renderOwnerInventory()">
+                    </div>
+
+                    <div class="filter-wrap">
+                        <select id="ownerVehicleFilter" onchange="renderOwnerInventory()">
+                            <option value="All">All Vehicles</option>
+                            <option value="Two Wheeler">Two Wheeler</option>
+                            <option value="Four Wheeler">Four Wheeler</option>
+                            <option value="Tractor">Tractor</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- DESKTOP TABLE VIEW -->
+                <div class="owner-table-card desktop-only-table">
+                    <table class="owner-table">
+                        <thead>
+                            <tr>
+                                <th>PART DETAILS</th>
+                                <th>VEHICLE</th>
+                                <th>CATEGORY</th>
+                                <th>PRICE</th>
+                                <th>STATUS</th>
+                                <th>ACTIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ownerInventoryTableBody">
+                            <!-- Dynamic Table Rows Rendered via JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- MOBILE CARDS VIEW -->
+                <div class="owner-cards-mobile-list mobile-only-list" id="ownerInventoryMobileCards">
+                    <!-- Dynamic Mobile Inventory Cards Rendered via JS -->
+                </div>
+            </section>
+
+            <!-- TAB 3: ADD / EDIT SPARE PART -->
+            <section class="owner-tab-panel hidden" id="viewAddPart">
+                <div class="panel-header">
+                    <h1 class="panel-title" id="ownerFormHeading">Add New Spare Part</h1>
+                    <p class="panel-subtitle">Add genuine two-wheeler, four-wheeler or tractor spare parts to your shop catalog.</p>
+                </div>
+
+                <div class="owner-form-card">
+                    <form id="ownerPartForm" onsubmit="handleOwnerFormSubmit(event)">
+                        <input type="hidden" id="ownerEditId" value="">
+                        <input type="hidden" id="ownerImageData" value="">
+
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label for="ownerPartName">PART NAME (ENGLISH) *</label>
+                                <input type="text" id="ownerPartName" required placeholder="e.g. Heavy Duty Disc Brake Pad Set">
+                            </div>
+                            <div class="form-group">
+                                <label for="ownerPartNameTe">PART NAME (తెలుగు)</label>
+                                <input type="text" id="ownerPartNameTe" placeholder="ఉదా: డిస్క్ బ్రేక్ ప్యాడ్ సెట్">
+                            </div>
+                        </div>
+
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label for="ownerVehicleType">VEHICLE TYPE *</label>
+                                <select id="ownerVehicleType" required>
+                                    <option value="Two Wheeler">Two Wheeler</option>
+                                    <option value="Four Wheeler">Four Wheeler</option>
+                                    <option value="Tractor">Tractor</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="ownerCategory">CATEGORY</label>
+                                <select id="ownerCategory">
+                                    <option value="Brakes">Brakes</option>
+                                    <option value="Transmission">Transmission</option>
+                                    <option value="Engine">Engine</option>
+                                    <option value="Electrical">Electrical</option>
+                                    <option value="Battery">Battery</option>
+                                    <option value="Filters">Filters</option>
+                                    <option value="Tyres">Tyres</option>
+                                    <option value="Suspension">Suspension</option>
+                                    <option value="Accessories">Accessories</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-20">
+                            <label for="ownerCompatible">COMPATIBLE MODELS (COMMA-SEPARATED)</label>
+                            <input type="text" id="ownerCompatible" placeholder="Hero Passion, Pulsar 150, Swift Dzire, Mahindra 575 DI">
+                        </div>
+
+                        <div class="form-group mb-20">
+                            <label for="ownerDesc">DESCRIPTION &amp; SPECIFICATIONS</label>
+                            <textarea id="ownerDesc" rows="3" placeholder="Explain technical materials, friction heat tolerance, torque ratings, or fitting recommendations..."></textarea>
+                        </div>
+
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label for="ownerPrice">PRICE (DEFAULT: CONTACT SHOP)</label>
+                                <input type="text" id="ownerPrice" value="Contact Shop" placeholder="Contact Shop">
+                            </div>
+                            <div class="form-group">
+                                <label for="ownerAvailability">AVAILABILITY STATUS</label>
+                                <select id="ownerAvailability">
+                                    <option value="Available" selected>Available</option>
+                                    <option value="Confirm with Shop">Confirm with Shop</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- DROPZONE IMAGE UPLOAD AREA -->
+                        <div class="form-group mb-25">
+                            <label>PART IMAGE</label>
+                            <div class="image-dropzone-box" id="ownerDropzone">
+                                <div id="ownerDropPrompt" class="dropzone-prompt-content">
+                                    <i class="fa-solid fa-cloud-arrow-up drop-cloud-icon"></i>
+                                    <p class="drop-title">Click to upload photo</p>
+                                    <span class="drop-sub">or drag &amp; drop image file here</span>
+                                    <input type="file" id="ownerFileInp" accept="image/*" class="file-input-hidden">
+                                </div>
+
+                                <div id="ownerPreviewWrap" class="image-preview-wrap hidden">
+                                    <img id="ownerPreviewImg" src="" alt="Preview">
+                                    <button type="button" class="btn-remove-preview" onclick="removeOwnerImage()" title="Remove photo">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions-flex">
+                            <button type="submit" class="btn btn-red btn-block btn-lg btn-pill-lg">
+                                <i class="fa-solid fa-circle-check"></i> <span id="btnOwnerSaveText">Add to Inventory</span>
+                            </button>
+                            <button type="button" class="btn btn-dark-outline btn-pill-lg hidden" id="btnCancelOwnerEdit" onclick="resetOwnerForm()">
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- TAB 4: CUSTOMER REQUESTS -->
+            <section class="owner-tab-panel hidden" id="viewRequests">
+                <div class="panel-header">
+                    <h1 class="panel-title">Customer Requests Management</h1>
+                    <p class="panel-subtitle">View, search, filter, and manage spare part requests submitted by customers.</p>
+                </div>
+
+                <div class="owner-card-box">
+                    <!-- FILTER & SEARCH BAR -->
+                    <div class="inventory-controls-bar mb-20">
+                        <div class="search-wrap">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" id="ownerReqSearchInput" placeholder="Search customer, mobile, part name, or ID..." oninput="renderOwnerConsoleData()">
+                        </div>
+
+                        <div class="filter-wrap">
+                            <select id="ownerReqVehicleFilter" onchange="renderOwnerConsoleData()">
+                                <option value="All">All Vehicles</option>
+                                <option value="Two Wheeler">Two Wheeler</option>
+                                <option value="Four Wheeler">Four Wheeler</option>
+                                <option value="Tractor">Tractor</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- STATUS TABS -->
+                    <div class="requests-filter-tabs mb-20">
+                        <button class="req-tab active" onclick="filterRequestsByStatus('All', this)">All</button>
+                        <button class="req-tab" onclick="filterRequestsByStatus('Pending', this)">Pending</button>
+                        <button class="req-tab" onclick="filterRequestsByStatus('Contacted', this)">Contacted</button>
+                        <button class="req-tab" onclick="filterRequestsByStatus('Available', this)">Available</button>
+                        <button class="req-tab" onclick="filterRequestsByStatus('Not Available', this)">Not Available</button>
+                        <button class="req-tab" onclick="filterRequestsByStatus('Completed', this)">Completed</button>
+                        <button class="req-tab" onclick="filterRequestsByStatus('Cancelled', this)">Cancelled</button>
+                    </div>
+
+                    <!-- DESKTOP TABLE VIEW -->
+                    <div class="owner-table-card desktop-only-table">
+                        <table class="owner-table">
+                            <thead>
+                                <tr>
+                                    <th>REQ #</th>
+                                    <th>CUSTOMER</th>
+                                    <th>MOBILE</th>
+                                    <th>SPARE PART</th>
+                                    <th>VEHICLE</th>
+                                    <th>MODEL</th>
+                                    <th>QTY</th>
+                                    <th>DATE</th>
+                                    <th>STATUS</th>
+                                    <th>ACTIONS</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ownerRequestsTableBody">
+                                <!-- Dynamic Requests Rows Rendered via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- MOBILE CARDS VIEW -->
+                    <div class="owner-cards-mobile-list mobile-only-list" id="ownerRequestsMobileCards">
+                        <!-- Dynamic Mobile Requests Cards Rendered via JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 5: PAYMENT HISTORY (EMPTY STATE - ARCHITECTURE READY FOR FUTURE GATEWAY) -->
+            <section class="owner-tab-panel hidden" id="viewPayments">
+                <div class="panel-header">
+                    <h1 class="panel-title">Payment History &amp; Ledger</h1>
+                    <p class="panel-subtitle">Demonstration of upcoming payment gateway and digital transaction recording architecture.</p>
+                </div>
+
+                <div class="owner-card-box text-center" style="padding: 45px 20px;">
+                    <div style="width: 64px; height: 64px; border-radius: 50%; background: #fee2e2; color: #dc2626; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 18px;">
+                        <i class="fa-solid fa-credit-card"></i>
+                    </div>
+                    <h3 style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-bottom: 8px;">No payment transactions connected yet</h3>
+                    <p style="color: #64748b; font-size: 0.92rem; max-width: 520px; margin: 0 auto 20px; line-height: 1.6;">
+                        Payment tracking, UPI/PhonePe logs, and digital ledger records will automatically appear here once the payment gateway integration is connected.
+                    </p>
+                    <span style="display: inline-block; background: #f1f5f9; border: 1px solid #cbd5e1; color: #475569; font-size: 0.78rem; font-weight: 700; padding: 6px 14px; border-radius: 999px;">
+                        <i class="fa-solid fa-shield-halved"></i> Architecture Ready for Payment Integration
+                    </span>
+                </div>
+            </section>
+
+            <!-- TAB 6: SETTINGS -->
+            <section class="owner-tab-panel hidden" id="viewSettings">
+                <div class="panel-header">
+                    <h1 class="panel-title">Console Settings</h1>
+                    <p class="panel-subtitle">Manage owner account credentials, profile information, and password security.</p>
+                </div>
+
+                <div class="owner-form-card mb-25">
+                    <h3 class="settings-group-title"><i class="fa-solid fa-user"></i> Account Profile Information</h3>
+                    <div id="settingsProfileAlert" class="login-error-msg hidden mb-15"></div>
+
+                    <form onsubmit="handleOwnerUpdateProfile(event)">
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label for="settingsName">OWNER FULL NAME *</label>
+                                <input type="text" id="settingsName" required placeholder="e.g. RamBabu">
+                            </div>
+                            <div class="form-group">
+                                <label for="settingsEmail">EMAIL ADDRESS</label>
+                                <input type="email" id="settingsEmail" placeholder="rambabu@saisrinivasa.com">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-red btn-pill">
+                            <i class="fa-solid fa-floppy-disk"></i> <span>Update Profile</span>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="owner-form-card mb-25">
+                    <h3 class="settings-group-title"><i class="fa-solid fa-user-gear"></i> Change Username</h3>
+                    <div id="settingsUsernameAlert" class="login-error-msg hidden mb-15"></div>
+
+                    <form onsubmit="handleOwnerChangeUsername(event)">
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label for="settingsCurrentUsername">CURRENT USERNAME</label>
+                                <input type="text" id="settingsCurrentUsername" readonly style="background: #f1f5f9; color: #64748b; font-weight: 700;">
+                            </div>
+                            <div class="form-group">
+                                <label for="settingsNewUsername">NEW USERNAME *</label>
+                                <input type="text" id="settingsNewUsername" required placeholder="Enter new username">
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-20">
+                            <label for="settingsUsernameCurrentPassword">CURRENT PASSWORD (REQUIRED TO CONFIRM) *</label>
+                            <input type="password" id="settingsUsernameCurrentPassword" required placeholder="Enter current password">
+                        </div>
+
+                        <button type="submit" class="btn btn-red btn-pill">
+                            <i class="fa-solid fa-pen-to-square"></i> <span>Change Username</span>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="owner-form-card mb-25">
+                    <h3 class="settings-group-title"><i class="fa-solid fa-shield-halved"></i> Security &amp; Password</h3>
+                    <div id="settingsPasswordAlert" class="login-error-msg hidden mb-15"></div>
+
+                    <form onsubmit="handleOwnerChangePassword(event)">
+                        <div class="form-group mb-15">
+                            <label for="settingsCurrentPassword">CURRENT PASSWORD *</label>
+                            <input type="password" id="settingsCurrentPassword" required placeholder="Enter current password">
+                        </div>
+
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label for="settingsNewPassword">NEW PASSWORD * (MIN 8 CHARACTERS)</label>
+                                <input type="password" id="settingsNewPassword" required placeholder="Enter new password">
+                            </div>
+                            <div class="form-group">
+                                <label for="settingsConfirmNewPassword">CONFIRM NEW PASSWORD *</label>
+                                <input type="password" id="settingsConfirmNewPassword" required placeholder="Confirm new password">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-red btn-pill">
+                            <i class="fa-solid fa-key"></i> <span>Change Password</span>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="owner-form-card">
+                    <h3 class="settings-group-title"><i class="fa-solid fa-shop"></i> Business &amp; Shop Information</h3>
+                    <div class="form-row-2">
+                        <div class="form-group">
+                            <label>BUSINESS NAME</label>
+                            <input type="text" value="Sai Srinivasa Automobiles" readonly style="background: #f1f5f9;">
+                        </div>
+                        <div class="form-group">
+                            <label>LOCATION</label>
+                            <input type="text" value="Wyra Road, Siripuram, Nemali X Road, Madhira" readonly style="background: #f1f5f9;">
+                        </div>
+                    </div>
+
+                    <div class="form-row-2">
+                        <div class="form-group">
+                            <label>PRIMARY PHONE (CALL / WHATSAPP)</label>
+                            <input type="text" value="8790460012" readonly style="background: #f1f5f9;">
+                        </div>
+                        <div class="form-group">
+                            <label>SECONDARY PHONE (CALL ONLY)</label>
+                            <input type="text" value="9949515518" readonly style="background: #f1f5f9;">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- REQUEST DETAILS MODAL -->
+    <div class="modal-overlay hidden" id="requestDetailsModal" onclick="closeRequestDetailsModal()">
+        <div class="modal-card" onclick="event.stopPropagation()" style="max-width: 650px;">
+            <button class="modal-close-btn" onclick="closeRequestDetailsModal()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-header-req flex-between align-center mb-15 pb-10" style="border-bottom: 1px solid #e2e8f0;">
+                <div>
+                    <span id="modalReqIdBadge" class="sidebar-badge badge-req" style="font-size: 0.85rem; padding: 4px 10px;">#102</span>
+                    <h2 class="modal-title-req" style="font-size: 1.3rem; margin-top: 5px; color: #0f172a;">Request Details</h2>
+                </div>
+                <span id="modalReqStatusBadge" class="badge-status badge-status-pending">Pending</span>
+            </div>
+
+            <div class="modal-body-req">
+                <div class="req-detail-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                    <div>
+                        <small class="text-gray display-block">CUSTOMER NAME</small>
+                        <strong id="modalReqCustomerName" style="font-size: 1rem; color: #0f172a;">-</strong>
+                    </div>
+
+                    <div>
+                        <small class="text-gray display-block">MOBILE NUMBER</small>
+                        <strong id="modalReqMobileNumber" style="font-size: 1rem; color: #0f172a;">-</strong>
+                    </div>
+
+                    <div>
+                        <small class="text-gray display-block">SPARE PART NAME</small>
+                        <strong id="modalReqPartName" style="font-size: 1rem; color: #dc2626;">-</strong>
+                    </div>
+
+                    <div>
+                        <small class="text-gray display-block">VEHICLE TYPE</small>
+                        <span id="modalReqVehicleType" class="badge-tag" style="display: inline-block; margin-top: 3px;">-</span>
+                    </div>
+
+                    <div>
+                        <small class="text-gray display-block">VEHICLE MODEL</small>
+                        <strong id="modalReqVehicleModel" style="font-size: 0.95rem; color: #334155;">-</strong>
+                    </div>
+
+                    <div>
+                        <small class="text-gray display-block">QUANTITY</small>
+                        <strong id="modalReqQuantity" style="font-size: 0.95rem; color: #334155;">1</strong>
+                    </div>
+
+                    <div style="grid-column: 1 / -1;">
+                        <small class="text-gray display-block mb-5">DESCRIPTION / ADDITIONAL REQUIREMENTS</small>
+                        <div id="modalReqDescription" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 12px; font-size: 0.9rem; color: #334155; min-height: 60px;">-</div>
+                    </div>
+
+                    <div style="grid-column: 1 / -1;" id="modalReqImgWrap" class="hidden">
+                        <small class="text-gray display-block mb-5">UPLOADED IMAGE</small>
+                        <img id="modalReqImage" src="" alt="Request attachment" style="max-height: 200px; border-radius: 8px; border: 1px solid #cbd5e1;">
+                    </div>
+
+                    <div>
+                        <small class="text-gray display-block">SUBMITTED DATE</small>
+                        <span id="modalReqCreatedDate" style="font-size: 0.85rem; color: #64748b;">-</span>
+                    </div>
+
+                    <div>
+                        <small class="text-gray display-block mb-5">CHANGE STATUS</small>
+                        <select id="modalReqStatusSelect" class="req-status-select" style="width: 100%; padding: 6px;" onchange="handleModalStatusChange(this.value)">
+                            <option value="Pending">Pending</option>
+                            <option value="Contacted">Contacted</option>
+                            <option value="Available">Available</option>
+                            <option value="Not Available">Not Available</option>
+                            <option value="Completed">Completed</option>
+                            <option value="Cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="modal-actions-req mt-25 flex-between" style="gap: 10px; flex-wrap: wrap;">
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                        <a id="modalReqCallBtn" href="#" class="btn btn-red btn-pill">
+                            <i class="fa-solid fa-phone"></i> <span>Call Customer</span>
+                        </a>
+                        <a id="modalReqWaBtn" href="#" target="_blank" class="btn btn-whatsapp btn-pill">
+                            <i class="fa-brands fa-whatsapp"></i> <span>WhatsApp Customer</span>
+                        </a>
+                    </div>
+                    <button id="modalReqDeleteBtn" onclick="confirmDeleteCurrentRequest()" class="btn btn-dark-outline btn-pill" style="color: #ef4444; border-color: #fca5a5;">
+                        <i class="fa-solid fa-trash"></i> <span>Delete</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

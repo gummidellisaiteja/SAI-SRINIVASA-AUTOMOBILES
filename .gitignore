@@ -1,0 +1,13 @@
+# Environment variables — NEVER commit real credentials
+.env
+
+# Node.js dependencies
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+*.iml

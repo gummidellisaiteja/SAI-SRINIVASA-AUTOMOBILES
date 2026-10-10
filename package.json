@@ -1,0 +1,36 @@
+{
+  "name": "sai-srinivasa-automobiles",
+  "version": "1.0.0",
+  "description": "Sai Srinivasa Automobiles Website & Owner Console Node.js Express Backend with MySQL",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "automobile",
+    "spare-parts",
+    "express",
+    "mysql",
+    "node"
+  ],
+  "author": "Sai Srinivasa Automobiles",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.3",
+    "express-rate-limit": "^8.7.0",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "msnodesqlv8": "^5.5.0",
+    "mssql": "^12.7.2",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^10.0.16"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
