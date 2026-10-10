@@ -11,3 +11,6 @@ Thumbs.db
 # IDE
 .idea/
 *.iml
+
+# Completely ignore scratch folder
+scratch/
